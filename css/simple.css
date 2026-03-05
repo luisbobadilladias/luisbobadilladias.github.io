@@ -269,6 +269,10 @@
 	gap: 3.6rem;
 }
 
+.stack-group {
+	text-align: center;
+}
+
 .stack-group h4 {
 	font-family: "poppins-semibold", sans-serif;
 	font-size: 1.5rem;
@@ -282,8 +286,10 @@
 
 .stack-group ul {
 	list-style: none;
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
+	display: inline-block;
+	text-align: left;
 }
 
 .stack-group ul li {
