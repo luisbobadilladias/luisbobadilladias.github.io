@@ -41,14 +41,6 @@
 	position: relative;
 }
 
-.intro-profile-pic {
-	width: 120px;
-	height: 120px;
-	border-radius: 50%;
-	margin: 0 auto 3rem;
-	display: block;
-	border: 4px solid rgba(255, 255, 255, 0.1);
-}
 
 .intro-content h1 {
 	color: #FFFFFF;
@@ -78,15 +70,6 @@
 	padding: 0 2rem 0.6rem 2rem;
 }
 
-.intro-tagline {
-	font-family: "lora-regular", serif;
-	font-size: 1.7rem;
-	line-height: 1.765;
-	color: rgba(255, 255, 255, 0.5);
-	margin-top: 1.2rem;
-	margin-bottom: 0;
-	letter-spacing: .1rem;
-}
 
 /* About Section */
 #about {
@@ -113,137 +96,6 @@
 	margin-bottom: 2.4rem;
 }
 
-/* Services Section */
-#services {
-	background: #F7F7F7;
-	padding-top: 12rem;
-	padding-bottom: 12rem;
-}
-
-#services .section-intro {
-	margin-bottom: 3rem;
-}
-
-.services-grid {
-	max-width: 1000px;
-	margin-left: auto;
-	margin-right: auto;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 3.6rem;
-}
-
-.service-item {
-	padding: 3rem;
-	background: #FFFFFF;
-	border-left: 3px solid #CC005F;
-}
-
-.service-item h3 {
-	font-family: "poppins-semibold", sans-serif;
-	font-size: 1.8rem;
-	line-height: 1.4;
-	color: #151515;
-	margin-top: 0;
-	margin-bottom: 1.2rem;
-}
-
-.service-item p {
-	font-family: "lora-regular", serif;
-	font-size: 1.6rem;
-	line-height: 1.75;
-	color: #666666;
-	margin-bottom: 0;
-}
-
-/* Work / Case Studies Section */
-#work {
-	background: #FFFFFF;
-	padding-top: 12rem;
-	padding-bottom: 12rem;
-}
-
-#work .section-intro {
-	margin-bottom: 3rem;
-}
-
-.work-content {
-	max-width: 800px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.case-study {
-	margin-bottom: 6rem;
-	padding-bottom: 6rem;
-	border-bottom: 1px solid #E8E8E8;
-}
-
-.case-study:last-child {
-	margin-bottom: 0;
-	padding-bottom: 0;
-	border-bottom: none;
-}
-
-.case-study h3 {
-	font-family: "poppins-semibold", sans-serif;
-	font-size: 2.4rem;
-	line-height: 1.25;
-	color: #151515;
-	margin-top: 0;
-	margin-bottom: 0.6rem;
-}
-
-.case-context {
-	font-family: "lora-regular", serif;
-	font-size: 1.5rem;
-	line-height: 1.6;
-	color: #999999;
-	margin-bottom: 2.4rem;
-}
-
-.case-list {
-	list-style: none;
-	margin-left: 0;
-	padding-left: 0;
-	margin-bottom: 2.4rem;
-}
-
-.case-list li {
-	font-family: "lora-regular", serif;
-	font-size: 1.6rem;
-	line-height: 1.75;
-	color: #555555;
-	margin-bottom: 1rem;
-	padding-left: 2.4rem;
-	position: relative;
-}
-
-.case-list li:before {
-	content: "—";
-	color: #CC005F;
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-
-.case-tech {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.8rem;
-}
-
-.case-tech span {
-	font-family: "poppins-regular", sans-serif;
-	font-size: 1.2rem;
-	line-height: 1;
-	color: #CC005F;
-	padding: 0.5rem 1.2rem;
-	border: 1px solid #CC005F;
-	border-radius: 3px;
-	text-transform: uppercase;
-	letter-spacing: .1rem;
-}
 
 /* Tech Stack Section */
 #stack {
@@ -319,20 +171,6 @@
 	color: #CC005F;
 }
 
-.contact-desc {
-	max-width: 700px;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-	margin-bottom: 6rem;
-}
-
-.contact-desc .lead {
-	font-family: "lora-regular", serif;
-	font-size: 1.8rem;
-	line-height: 1.8;
-	color: rgba(255, 255, 255, 0.6);
-}
 
 .contact-info {
 	text-align: center;
@@ -435,18 +273,12 @@ footer .copyright span {
 		font-size: 3rem;
 	}
 
-	.services-grid {
-		grid-template-columns: 1fr;
-	}
-
 	.stack-grid {
 		grid-template-columns: 1fr 1fr;
 		gap: 3.6rem;
 	}
 
 	#about,
-	#services,
-	#work,
 	#stack,
 	#contact {
 		padding-top: 9rem;
