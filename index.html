@@ -30,6 +30,24 @@
 
 <body id="top">
 
+    <!-- nav -->
+    <header class="site-nav">
+        <a class="nav-name" href="#top">Luis Bobadilla Dias</a>
+        <nav class="nav-links">
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <details class="nav-menu">
+            <summary aria-label="Menu"><i class="fa fa-bars"></i></summary>
+            <nav>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </details>
+    </header>
+
     <!-- intro section -->
     <section id="intro">
         <div class="intro-overlay"></div>
@@ -41,7 +59,10 @@
                         <span>AWS Lakehouse Architecture, Python, Distributed Pipelines & Data Governance
                         </span>
                     </p>
-
+                    <div class="intro-buttons">
+                        <a class="button button-primary" href="#projects">View Work</a>
+                        <a class="button" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -72,6 +93,173 @@
                         technology that scales.
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- projects section -->
+    <section id="projects">
+        <div class="row section-intro">
+            <div class="col-twelve">
+                <h5>Projects</h5>
+                <h1>Selected Work</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="project-grid">
+                <a class="project-card" href="projects/fellowbridge.html">
+                    <div class="project-thumb project-thumb-logo">
+                        <img src="images/projects/FellowBridge.jpeg" alt="FellowBridge logo">
+                    </div>
+                    <div class="project-body">
+                        <span class="project-label">Jan 2026 – Apr 2026</span>
+                        <h3>FellowBridge Backend + Data Ingestion Pipeline</h3>
+                        <p>Scholarship data lake on S3 + Athena and a TypeScript/Lambda back-end for a platform connecting
+                            students with funded opportunities and mentors.</p>
+                        <ul class="tags">
+                            <li>Lambda</li>
+                            <li>TypeScript</li>
+                            <li>S3</li>
+                            <li>Athena</li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- experience section -->
+    <section id="experience">
+        <div class="row section-intro">
+            <div class="col-twelve">
+                <h5>Experience</h5>
+                <h1>Where I've Worked</h1>
+            </div>
+        </div>
+
+        <div class="row resume-timeline">
+            <div class="col-twelve resume-header">
+                <h2>Work Experience</h2>
+            </div>
+            <div class="col-twelve">
+                <div class="timeline-wrap">
+                    <div class="timeline-block">
+                        <div class="timeline-ico"><i class="fa fa-briefcase"></i></div>
+                        <div class="timeline-header">
+                            <h3>Plub</h3>
+                            <p>June 2025 – Present</p>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Senior Data Engineer</h4>
+                            <p>Leading the end-to-end design of Plub’s AWS data platform: lakehouse architecture, ingestion, orchestration, and the governance and observability foundation for self-serve analytics.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-block">
+                        <div class="timeline-ico"><i class="fa fa-briefcase"></i></div>
+                        <div class="timeline-header">
+                            <h3>itti</h3>
+                            <p>August 2024 – June 2025</p>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Ssr. Data Engineer</h4>
+                            <p>Analytics Engineering team on an AWS data lake, using dbt for transformations and data quality, Airflow for orchestration, and an in-house ingestion and classification tool.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-block">
+                        <div class="timeline-ico"><i class="fa fa-briefcase"></i></div>
+                        <div class="timeline-header">
+                            <h3>Itaú Paraguay</h3>
+                            <p>February 2023 – August 2024</p>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Data Engineer I</h4>
+                            <p>Architected, built and maintained an AWS data lake for the bank’s market-disruption products (Pik and Tienda Naranja), owning data governance, quality and automation.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-block">
+                        <div class="timeline-ico"><i class="fa fa-briefcase"></i></div>
+                        <div class="timeline-header">
+                            <h3>Deriv</h3>
+                            <p>June 2022 – February 2023</p>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Back-end Developer</h4>
+                            <p>Back-end operations team building secure, scalable API business logic in the KYC domain.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-block">
+                        <div class="timeline-ico"><i class="fa fa-briefcase"></i></div>
+                        <div class="timeline-header">
+                            <h3>Oktana</h3>
+                            <p>October 2021 – June 2022</p>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Software Engineer I</h4>
+                            <p>Marketing Demo team working with Salesforce’s Keynote Demo team to build demos for Dreamforce, World Tours and other keynotes.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-block">
+                        <div class="timeline-ico"><i class="fa fa-briefcase"></i></div>
+                        <div class="timeline-header">
+                            <h3>El Mejor SRL</h3>
+                            <p>July 2020 – September 2021</p>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Developer / R&amp;D Coordinator</h4>
+                            <p>Built a company-wide data warehouse with SSIS, Python and SQL Server feeding Power BI, and applied machine learning to business decision models.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-block">
+                        <div class="timeline-ico"><i class="fa fa-briefcase"></i></div>
+                        <div class="timeline-header">
+                            <h3>Kansas State University</h3>
+                            <p>June 2018 – May 2020</p>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Graduate Teaching / Research Assistant</h4>
+                            <p>GTA for CIS 732 (Machine Learning). As GRA, extracted procedural recipes from scientific literature in collaboration with Lawrence Livermore National Laboratory.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row resume-timeline">
+            <div class="col-twelve resume-header">
+                <h2>Education</h2>
+            </div>
+            <div class="col-twelve">
+                <div class="timeline-wrap">
+                    <div class="timeline-block">
+                        <div class="timeline-ico"><i class="fa fa-graduation-cap"></i></div>
+                        <div class="timeline-header">
+                            <h3>Kansas State University</h3>
+                            <p>August 2018 – May 2020</p>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>M.S. in Computer Science</h4>
+                            <p>Thesis on graph mining and role extraction in property graphs using high-performance computing. <a href="https://krex.k-state.edu/dspace/handle/2097/40528" target="_blank" rel="noopener noreferrer">Read the thesis</a>.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-block">
+                        <div class="timeline-ico"><i class="fa fa-graduation-cap"></i></div>
+                        <div class="timeline-header">
+                            <h3>Kansas State University</h3>
+                            <p>August 2014 – May 2018</p>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>B.S. in Computer Science</h4>
+                            <p>Electives in Machine Learning and Pattern Recognition, Artificial Intelligence, and Database Systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row resume-download">
+            <div class="col-twelve">
+                <a class="button button-primary" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a>
             </div>
         </div>
     </section>

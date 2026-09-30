@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>FellowBridge — Luis Bobadilla Dias</title>
+    <meta name="description" content="Case study: scholarship data ingestion into an S3 + Athena data lake and a TypeScript/Lambda back-end for FellowBridge (January 2026 – April 2026).">
+    <meta name="author" content="Luis Bobadilla Dias">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="FellowBridge — Luis Bobadilla Dias">
+    <meta property="og:description" content="Case study: scholarship data ingestion into an S3 + Athena data lake and a TypeScript/Lambda back-end for FellowBridge (January 2026 – April 2026).">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://luisbobadilladias.github.io/images/projects/FellowBridge.jpeg">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/simple.css">
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+
+<body id="top">
+
+    <!-- nav -->
+    <header class="site-nav">
+        <a class="nav-name" href="../index.html">Luis Bobadilla Dias</a>
+        <nav class="nav-links">
+            <a href="../index.html#projects">Projects</a>
+            <a href="../index.html#experience">Experience</a>
+            <a href="../index.html#contact">Contact</a>
+        </nav>
+        <details class="nav-menu">
+            <summary aria-label="Menu"><i class="fa fa-bars"></i></summary>
+            <nav>
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#experience">Experience</a>
+                <a href="../index.html#contact">Contact</a>
+            </nav>
+        </details>
+    </header>
+
+    <!-- case study hero -->
+    <section class="case-hero">
+        <div class="intro-overlay"></div>
+        <div class="intro-content">
+            <div class="row">
+                <div class="col-twelve">
+                    <span class="project-label">Backend + Data Ingestion Pipeline</span>
+                    <h1>FellowBridge</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- case study body -->
+    <section class="case-study">
+        <div class="row">
+            <div class="col-twelve">
+                <div class="about-desc">
+                    <img class="case-logo" src="../images/projects/FellowBridge.jpeg" alt="FellowBridge logo">
+
+                    <dl class="case-meta">
+                        <div>
+                            <dt>Role</dt>
+                            <dd>Data &amp; Back-end Engineer</dd>
+                        </div>
+                        <div>
+                            <dt>Timeline</dt>
+                            <dd>January 2026 – April 2026</dd>
+                        </div>
+                        <div>
+                            <dt>Website</dt>
+                            <dd><a href="https://fellowbridge.com/" target="_blank" rel="noopener noreferrer">fellowbridge.com</a></dd>
+                        </div>
+                        <div>
+                            <dt>Stack</dt>
+                            <dd>
+                                <ul class="tags">
+                                    <li>AWS Lambda</li>
+                                    <li>TypeScript</li>
+                                    <li>S3</li>
+                                    <li>Athena</li>
+                                    <li>Web Scraping</li>
+                                </ul>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <h2>The Platform</h2>
+                    <p class="lead">
+                        FellowBridge helps students and researchers discover global opportunities and learn from people
+                        who have successfully navigated them, connecting them with funded opportunities and with mentors
+                        who have already been there.
+                    </p>
+                    <p class="lead">
+                        I worked on two sides of the platform: the data pipeline that gathers scholarship opportunities
+                        from across the web, and the back-end that serves the site.
+                    </p>
+
+                    <div class="flow" role="img"
+                        aria-label="Architecture: web sources are scraped into an S3 data lake and queried with Athena; the site calls TypeScript endpoints running on AWS Lambda.">
+                        <p class="flow-title">Data ingestion</p>
+                        <ol class="flow-row">
+                            <li>Web sources</li>
+                            <li>Scrapers</li>
+                            <li>S3 data lake</li>
+                            <li>Athena</li>
+                        </ol>
+                        <p class="flow-title">Back-end</p>
+                        <ol class="flow-row">
+                            <li>fellowbridge.com</li>
+                            <li>Lambda endpoints<br>(TypeScript)</li>
+                        </ol>
+                    </div>
+
+                    <h2>Data Ingestion</h2>
+                    <p class="lead">
+                        Scholarship opportunities are spread across many sites in many formats. I built the ingestion
+                        pipeline that scrapes these sources and lands the results in Amazon S3 as a data lake, with
+                        Amazon Athena on top so the opportunity data can be queried with SQL.
+                    </p>
+
+                    <h2>Back-end</h2>
+                    <p class="lead">
+                        I also worked on the platform's back-end, writing TypeScript services on AWS Lambda that serve the
+                        endpoints behind the site.
+                    </p>
+
+                    <div class="case-nav">
+                        <a href="../index.html#projects">&larr; All projects</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <div class="row">
+            <div class="col-twelve">
+                <div class="copyright">
+                    <span>&copy; 2026 Luis Bobadilla Dias.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
