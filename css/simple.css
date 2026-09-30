@@ -183,6 +183,10 @@
 	margin-bottom: 2.1rem;
 }
 
+.contact-info .icon a {
+	color: inherit;
+}
+
 .contact-info h5 {
 	color: #FFFFFF;
 	font-size: 1.6rem;
@@ -244,6 +248,13 @@ footer .copyright span {
 	text-transform: uppercase;
 }
 
+/* Touch devices (iOS Safari ignores fixed backgrounds and scales the image badly) */
+@media (hover: none) {
+	#intro {
+		background-attachment: scroll;
+	}
+}
+
 /* Responsive */
 @media only screen and (max-width: 1024px) {
 	.intro-content h1 {
@@ -262,10 +273,6 @@ footer .copyright span {
 	}
 
 	.intro-position {
-		font-size: 1.4rem;
-	}
-
-	.intro-tagline {
 		font-size: 1.4rem;
 	}
 
