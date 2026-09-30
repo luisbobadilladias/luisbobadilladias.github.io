@@ -443,7 +443,8 @@ section[id] {
 
 .project-grid {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(28rem, 36rem));
+	justify-content: center;
 	gap: 3rem;
 }
 
@@ -663,17 +664,6 @@ section[id] {
 	text-align: center;
 }
 
-/* Writing Section */
-#writing {
-	background: #FFFFFF;
-	padding-top: 12rem;
-	padding-bottom: 12rem;
-}
-
-.writing-desc {
-	text-align: center;
-}
-
 /* Case Study Pages */
 .case-hero {
 	background: #151515 url(../images/intro-bg.jpg) no-repeat center bottom;
@@ -776,10 +766,6 @@ section[id] {
 
 /* Portfolio responsive */
 @media only screen and (max-width: 1024px) {
-	.project-grid {
-		grid-template-columns: 1fr 1fr;
-	}
-
 	#experience .timeline-header {
 		padding-right: 50px;
 	}
@@ -807,8 +793,7 @@ section[id] {
 	}
 
 	#projects,
-	#experience,
-	#writing {
+	#experience {
 		padding-top: 9rem;
 		padding-bottom: 9rem;
 	}
@@ -838,10 +823,6 @@ section[id] {
 }
 
 @media only screen and (max-width: 600px) {
-	.project-grid {
-		grid-template-columns: 1fr;
-	}
-
 	.button {
 		margin-left: 0;
 		margin-right: 0;
