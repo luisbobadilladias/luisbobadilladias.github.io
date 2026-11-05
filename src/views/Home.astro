@@ -2,7 +2,6 @@
 import { Image } from 'astro:assets';
 import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import Motif from '../components/Motif.astro';
 import PostList from '../components/PostList.astro';
 import type { Lang, RouteKey } from '../lib/i18n';
 import { routes, otherLang } from '../lib/i18n';
@@ -57,7 +56,6 @@ const posts = (await getPosts(lang)).slice(0, 3);
         class="portrait"
         loading="eager"
       />
-      <Motif class="hero-motif" />
     </div>
     </div>
   </section>
