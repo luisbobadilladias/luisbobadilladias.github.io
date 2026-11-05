@@ -29,9 +29,6 @@
   --cta-bg: var(--magenta);
   --cta-text: #ffffff;
   --cta-hover: #a8004e;
-  --motif-cell: #ffffff;
-  --motif-on: var(--magenta);
-  --motif-mark: #ffffff;
 
   --font-head: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
@@ -60,7 +57,6 @@
     --code-bg: #151515;
     --inline-code-bg: #2a0a18;
     --focus: var(--magenta-light);
-    --motif-cell: #151515;
     color-scheme: dark;
   }
 }
@@ -78,7 +74,6 @@
   --code-bg: #151515;
   --inline-code-bg: #2a0a18;
   --focus: var(--magenta-light);
-  --motif-cell: #151515;
   color-scheme: dark;
 }
 
@@ -444,11 +439,6 @@ a.chip:hover {
 }
 .page-head > div {
   max-width: 46rem;
-}
-@media (max-width: 40rem) {
-  .page-motif {
-    display: none;
-  }
 }
 
 /* ---------- Tick list ---------- */

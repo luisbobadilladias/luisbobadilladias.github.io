@@ -2,7 +2,6 @@
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import Base from '../layouts/Base.astro';
-import Motif from '../components/Motif.astro';
 import type { Lang } from '../lib/i18n';
 import { routes, otherLang } from '../lib/i18n';
 import { career } from '../lib/content';
@@ -35,7 +34,6 @@ const badge = (name?: string) => (name ? badgeFiles[`../assets/badges/${name}.pn
         <a class="btn btn-primary" href={t.cv.file} download>{t.cv.label}</a>
       </div>
     </div>
-    <Motif class="page-motif" active={[1, 2]} />
   </header>
 
   <section class="section wrap" aria-labelledby="plub">

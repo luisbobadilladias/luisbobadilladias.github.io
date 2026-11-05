@@ -1,6 +1,5 @@
 ---
 import Base from '../layouts/Base.astro';
-import Motif from '../components/Motif.astro';
 import TimeGate from '../components/TimeGate.astro';
 import type { Lang } from '../lib/i18n';
 import { routes, otherLang } from '../lib/i18n';
@@ -74,7 +73,6 @@ const jsonLd = [
         <a class="btn btn-primary" href={d.waitlistUrl} target="_blank" rel="noopener">{t.waitlist.cta}</a>
       </TimeGate>
     </div>
-    <Motif class="page-motif" active={[2, 1]} />
   </header>
 
   <section class="section wrap" aria-labelledby="cohorte">

@@ -1,7 +1,6 @@
 ---
 import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import Motif from '../components/Motif.astro';
 import type { Lang } from '../lib/i18n';
 import { routes, otherLang } from '../lib/i18n';
 import { consulting, site, getCases, whatsappUrl, mailtoUrl } from '../lib/content';
@@ -29,7 +28,6 @@ const cases = await Promise.all(
         <a class="btn btn-secondary" href={mailtoUrl(t.cta.emailSubject)}>{t.cta.email}</a>
       </div>
     </div>
-    <Motif class="page-motif" active={[4, 0]} />
   </header>
 
   <section class="section wrap" aria-labelledby="services">

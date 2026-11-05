@@ -2,7 +2,6 @@
 import type { Lang } from '../lib/i18n';
 import { rssPath } from '../lib/i18n';
 import { site, contact, whatsappUrl, mailtoUrl } from '../lib/content';
-import Motif from './Motif.astro';
 
 interface Props {
   lang: Lang;
@@ -28,7 +27,6 @@ const links = [
         <h2>{f.title}</h2>
         <p class="footer-text">{f.text}</p>
       </div>
-      <Motif class="footer-motif" />
     </div>
     <ul class="contact-list clean-list">
       {
@@ -103,10 +101,5 @@ const links = [
     border-top: 1px solid var(--band-border);
     font-size: 0.9rem;
     color: var(--band-muted);
-  }
-  @media (max-width: 30rem) {
-    :global(.footer-motif) {
-      display: none;
-    }
   }
 </style>
