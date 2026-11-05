@@ -1,0 +1,181 @@
+---
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Motif from '../components/Motif.astro';
+import type { Lang } from '../lib/i18n';
+import { routes, otherLang } from '../lib/i18n';
+import { consulting, site, getCases, whatsappUrl, mailtoUrl } from '../lib/content';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = consulting[lang];
+const ui = site[lang].ui;
+const cases = await Promise.all(
+  (await getCases(lang)).map(async (c) => ({ ...c, Content: (await render(c)).Content })),
+);
+---
+
+<Base lang={lang} title={t.title} description={t.description} altPath={routes.consulting[otherLang(lang)]} route="consulting">
+  <header class="page-head wrap">
+    <div>
+      <h1>{t.title}</h1>
+      <p class="lead">{t.lead}</p>
+      <div class="actions">
+        <a class="btn btn-primary" href={whatsappUrl(t.cta.whatsappMessage)} target="_blank" rel="noopener">
+          {t.cta.whatsapp}
+        </a>
+        <a class="btn btn-secondary" href={mailtoUrl(t.cta.emailSubject)}>{t.cta.email}</a>
+      </div>
+    </div>
+    <Motif class="page-motif" active={[4, 0]} />
+  </header>
+
+  <section class="section wrap" aria-labelledby="services">
+    <h2 id="services">{t.servicesTitle}</h2>
+    <ul class="grid grid-2 grid-3 clean-list">
+      {
+        t.services.map((s) => (
+          <li class="card">
+            <h3>{s.title}</h3>
+            <p class="muted">{s.text}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="section wrap" aria-labelledby="process">
+    <h2 id="process">{t.processTitle}</h2>
+    <ol class="steps clean-list">
+      {
+        t.process.map((p, i) => (
+          <li>
+            <span class="step-n" aria-hidden="true">
+              {i + 1}
+            </span>
+            <div>
+              <h3>{p.title}</h3>
+              <p class="muted">{p.text}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="section wrap" aria-labelledby="cases">
+    <div class="section-head">
+      <h2 id="cases">{t.casesTitle}</h2>
+      <p class="muted">{t.casesNote}</p>
+    </div>
+    <div class="grid grid-2-wide">
+      {
+        cases.map(({ data, Content }) => (
+          <article class="card case" aria-labelledby={`case-${data.client}`}>
+            <p class="eyebrow">{data.client}</p>
+            <h3 id={`case-${data.client}`}>{data.title}</h3>
+            <p class="case-summary">{data.summary}</p>
+            {data.placeholder ? (
+              <p class="muted">
+                <em>{ui.comingSoon}</em>
+              </p>
+            ) : (
+              <div class="prose case-body">
+                <Content />
+              </div>
+            )}
+            {(data.role || data.period) && (
+              <p class="muted case-meta">{[data.role, data.period].filter(Boolean).join(' · ')}</p>
+            )}
+            {data.stack.length > 0 && (
+              <ul class="chips">
+                {data.stack.map((s) => (
+                  <li class="chip">{s}</li>
+                ))}
+              </ul>
+            )}
+            {data.url && (
+              <p class="case-link">
+                <a href={data.url} target="_blank" rel="noopener">
+                  {ui.visit}: {data.url.replace(/^https?:\/\//, '')}
+                </a>
+              </p>
+            )}
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="cta">
+    <div class="band">
+      <h2 id="cta">{t.cta.title}</h2>
+      <p class="lead">{t.cta.text}</p>
+      <div class="actions">
+        <a class="btn btn-primary" href={whatsappUrl(t.cta.whatsappMessage)} target="_blank" rel="noopener">
+          {t.cta.whatsapp}
+        </a>
+        <a class="btn btn-secondary" href={mailtoUrl(t.cta.emailSubject)}>{t.cta.email}</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .steps {
+    display: grid;
+    gap: 1.5rem;
+  }
+  @media (min-width: 48rem) {
+    .steps {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .steps li {
+    display: flex;
+    gap: 1rem;
+  }
+  @media (min-width: 48rem) {
+    .steps li {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  }
+  .step-n {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 1.5px solid var(--accent);
+    border-radius: 0.4rem;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .steps h3 {
+    margin-bottom: 0.25rem;
+  }
+  .steps p {
+    margin: 0;
+  }
+  .case-summary {
+    font-weight: 500;
+  }
+  .case-body {
+    color: var(--text-muted);
+  }
+  .case-body :global(strong) {
+    color: var(--text);
+  }
+  .case-meta {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    margin: 0.5rem 0 0;
+  }
+  .case-link {
+    margin: 1rem 0 0;
+  }
+</style>

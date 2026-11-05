@@ -1,0 +1,305 @@
+---
+import Base from '../layouts/Base.astro';
+import Motif from '../components/Motif.astro';
+import TimeGate from '../components/TimeGate.astro';
+import type { Lang } from '../lib/i18n';
+import { routes, otherLang } from '../lib/i18n';
+import { course, teaching as d, site, whatsappUrl } from '../lib/content';
+import { longDate, mediumDate, dayMonth, time, clock, guaranies, weekdayName, pyDate, fill, capitalize } from '../lib/format';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = course[lang];
+const s = site[lang];
+
+// Everything date-related comes from src/content/teaching.json.
+const mc = d.masterclass;
+const days = d.cohort.weekdays.map((n) => weekdayName(lang, n) + (lang === 'en' ? 's' : ''));
+const schedule = `${capitalize(days.join(` ${t.cohort.and} `))}, ${clock(lang, d.cohort.startTime)}–${clock(lang, d.cohort.endTime)}`;
+const cohortDates = fill(t.cohort.datesValue, {
+  start: dayMonth(lang, pyDate(d.cohort.start)),
+  end: mediumDate(lang, pyDate(d.cohort.end)),
+});
+const launch = guaranies(lang, d.price.launch);
+const regular = guaranies(lang, d.price.regular);
+const launchUntil = dayMonth(lang, d.price.launchUntil);
+const open = { until: d.waitlistFrom };
+const closed = { from: d.waitlistFrom };
+
+const SITE = 'https://luisbobadilladias.github.io';
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: d.courseName,
+    description: t.description,
+    inLanguage: 'es',
+    provider: { '@type': 'Person', name: s.name, url: `${SITE}/` },
+    offers: { '@type': 'Offer', price: d.price.regular, priceCurrency: 'PYG', url: d.signupUrl },
+    hasCourseInstance: {
+      '@type': 'CourseInstance',
+      courseMode: 'online',
+      startDate: d.cohort.start,
+      endDate: d.cohort.end,
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Event',
+    name: `${t.masterclass.title}: ${d.courseName}`,
+    startDate: mc.start,
+    eventAttendanceMode: 'https://schema.org/OnlineEventAttendanceMode',
+    eventStatus: 'https://schema.org/EventScheduled',
+    location: { '@type': 'VirtualLocation', url: d.signupUrl },
+    isAccessibleForFree: true,
+    inLanguage: 'es',
+    organizer: { '@type': 'Person', name: s.name, url: `${SITE}/` },
+  },
+];
+---
+
+<Base lang={lang} title={t.title} description={t.description} altPath={routes.teaching[otherLang(lang)]} route="teaching" jsonLd={jsonLd}>
+  <header class="page-head wrap">
+    <div>
+      <p class="eyebrow">{t.eyebrow}</p>
+      <h1>{d.courseName}</h1>
+      <p class="lead">{t.lead}</p>
+      <TimeGate {...open} class="actions">
+        <a class="btn btn-primary" href={d.signupUrl} target="_blank" rel="noopener">{t.masterclass.cta}</a>
+        <a class="btn btn-secondary" href="#cohorte">{t.cohort.title}</a>
+      </TimeGate>
+      <TimeGate {...closed} class="actions">
+        <a class="btn btn-primary" href={d.waitlistUrl} target="_blank" rel="noopener">{t.waitlist.cta}</a>
+      </TimeGate>
+    </div>
+    <Motif class="page-motif" active={[2, 1]} />
+  </header>
+
+  <section class="section wrap" aria-labelledby="cohorte">
+    <div class="grid grid-2-wide">
+      <TimeGate {...open} class="band">
+        <h2>{t.masterclass.title}</h2>
+        <p class="muted">{t.masterclass.text}</p>
+        <dl class="facts">
+          <div>
+            <dt>{t.masterclass.when}</dt>
+            <dd>
+              <time datetime={mc.start}>{capitalize(longDate(lang, mc.start))}, {time(lang, mc.start)}</time>{' '}
+              {t.masterclass.timeSuffix}
+            </dd>
+          </div>
+          <div>
+            <dt>{t.masterclass.where}</dt>
+            <dd>{mc.platform}</dd>
+          </div>
+        </dl>
+        <div class="actions">
+          <a class="btn btn-primary" href={d.signupUrl} target="_blank" rel="noopener">{t.masterclass.cta}</a>
+        </div>
+      </TimeGate>
+
+      <TimeGate {...closed} class="band">
+        <h2>{t.waitlist.title}</h2>
+        <p class="muted">{t.waitlist.text}</p>
+        <div class="actions">
+          <a class="btn btn-primary" href={d.waitlistUrl} target="_blank" rel="noopener">{t.waitlist.cta}</a>
+        </div>
+      </TimeGate>
+
+      <div class="card">
+        <h2 id="cohorte">{t.cohort.title}</h2>
+        <dl class="facts">
+          <div>
+            <dt>{t.cohort.classesLabel}</dt>
+            <dd>{fill(t.cohort.classesValue, { n: d.cohort.classes })}</dd>
+          </div>
+          <div>
+            <dt>{t.cohort.scheduleLabel}</dt>
+            <dd>{schedule} {t.masterclass.timeSuffix}</dd>
+          </div>
+          <div>
+            <dt>{t.cohort.datesLabel}</dt>
+            <dd>{cohortDates}</dd>
+          </div>
+          <div>
+            <dt>{t.cohort.priceLabel}</dt>
+            <TimeGate as="dd" until={d.price.launchUntil}>
+              <strong>{fill(t.cohort.launchPrice, { price: launch, date: launchUntil })}</strong>
+              <br />
+              <span class="muted">{fill(t.cohort.regularPriceAfter, { price: regular })}</span>
+            </TimeGate>
+            <TimeGate as="dd" from={d.price.launchUntil}>
+              <strong>{fill(t.cohort.regularPrice, { price: regular })}</strong>
+            </TimeGate>
+          </div>
+        </dl>
+        <TimeGate {...open} class="actions">
+          <a class="btn btn-secondary" href={d.signupUrl} target="_blank" rel="noopener">{t.cohort.cta}</a>
+        </TimeGate>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" aria-label={`${t.forWhoTitle} / ${t.outcomesTitle}`}>
+    <div class="grid grid-2-wide">
+      <div>
+        <h2>{t.forWhoTitle}</h2>
+        <ul class="ticks">{t.forWho.map((x) => <li>{x}</li>)}</ul>
+      </div>
+      <div>
+        <h2>{t.outcomesTitle}</h2>
+        <ul class="ticks">{t.outcomes.map((x) => <li>{x}</li>)}</ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" aria-labelledby="programa">
+    <div class="section-head">
+      <h2 id="programa">{t.syllabusTitle}</h2>
+      <p class="lead">{t.syllabusLead}</p>
+    </div>
+    <ol class="syllabus clean-list">
+      {
+        t.syllabus.map((c, i) => (
+          <li class="card">
+            <p class="eyebrow">{lang === 'es' ? `Clase ${i + 1}` : `Class ${i + 1}`}</p>
+            <h3>{c.title}</h3>
+            <p class="muted">{c.text}</p>
+            <dl class="swap">
+              <div>
+                <dt>{t.syllabusExcel}</dt>
+                <dd>{c.excel}</dd>
+              </div>
+              <span class="arrow" aria-hidden="true">
+                →
+              </span>
+              <div>
+                <dt>{t.syllabusPython}</dt>
+                <dd>
+                  <code>{c.python}</code>
+                </dd>
+              </div>
+            </dl>
+          </li>
+        ))
+      }
+    </ol>
+    <p class="muted dataset">{t.datasetNote}</p>
+  </section>
+
+  <section class="section wrap" aria-labelledby="faq">
+    <h2 id="faq">{t.faqTitle}</h2>
+    <div class="faq">
+      {
+        t.faq.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="talleres">
+    <div class="band">
+      <h2 id="talleres">{t.workshops.title}</h2>
+      <p class="lead">{t.workshops.text}</p>
+      <div class="actions">
+        <a class="btn btn-primary" href={whatsappUrl(t.workshops.whatsappMessage)} target="_blank" rel="noopener">
+          {t.workshops.cta}
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .grid-2-wide > .band h2,
+  .grid-2-wide > .card h2 {
+    font-size: 1.6rem;
+  }
+  .syllabus {
+    display: grid;
+    gap: 1rem;
+  }
+  @media (min-width: 40rem) {
+    .syllabus {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 64rem) {
+    .syllabus {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .syllabus .muted {
+    font-size: 0.95rem;
+  }
+  .swap {
+    margin: auto 0 0;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border);
+    display: grid;
+    gap: 0.35rem;
+    font-size: 0.9rem;
+  }
+  .swap div {
+    display: grid;
+    gap: 0.1rem;
+  }
+  .swap dt {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+  }
+  .swap dd {
+    margin: 0;
+    font-weight: 500;
+  }
+  .arrow {
+    color: var(--accent);
+    font-weight: 700;
+    line-height: 1;
+  }
+  .dataset {
+    margin-top: 1.5rem;
+  }
+  .faq {
+    max-width: 46rem;
+    border-top: 1px solid var(--border);
+  }
+  details {
+    border-bottom: 1px solid var(--border);
+  }
+  summary {
+    cursor: pointer;
+    padding: 1rem 2rem 1rem 0;
+    font-weight: 700;
+    list-style: none;
+    position: relative;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary::after {
+    content: '+';
+    position: absolute;
+    right: 0.25rem;
+    top: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    color: var(--accent);
+  }
+  details[open] summary::after {
+    content: '–';
+  }
+  details p {
+    margin: 0 0 1rem;
+    color: var(--text-muted);
+  }
+</style>

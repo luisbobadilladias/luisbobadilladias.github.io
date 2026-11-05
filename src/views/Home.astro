@@ -1,0 +1,204 @@
+---
+import { Image } from 'astro:assets';
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Motif from '../components/Motif.astro';
+import PostList from '../components/PostList.astro';
+import type { Lang, RouteKey } from '../lib/i18n';
+import { routes, otherLang } from '../lib/i18n';
+import { home, site, getNow, getPosts } from '../lib/content';
+import { postDate } from '../lib/format';
+import { personSchema } from '../lib/seo';
+import photo from '../assets/luis.jpg';
+import space from '../assets/space.jpg';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = home[lang];
+const s = site[lang];
+const now = await getNow(lang);
+const { Content: NowContent } = await render(now);
+const posts = (await getPosts(lang)).slice(0, 3);
+---
+
+<Base
+  lang={lang}
+  title={t.title}
+  description={t.description}
+  altPath={routes.home[otherLang(lang)]}
+  route="home"
+  jsonLd={[personSchema(lang)]}
+>
+  <section class="space-hero">
+    <Image
+      src={space}
+      alt=""
+      widths={[640, 1024, 1600, 2400]}
+      sizes="100vw"
+      quality={60}
+      class="space-bg"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="hero wrap">
+    <div class="hero-text">
+      <p class="eyebrow">{s.role} · {s.location}</p>
+      <h1>{t.greeting}</h1>
+      <p class="lead">{t.tagline}</p>
+    </div>
+    <div class="hero-media">
+      <Image
+        src={photo}
+        alt={t.photoAlt}
+        widths={[240, 360, 480]}
+        sizes="(min-width: 56rem) 240px, 160px"
+        class="portrait"
+        loading="eager"
+      />
+      <Motif class="hero-motif" />
+    </div>
+    </div>
+  </section>
+
+  <section class="section wrap" aria-labelledby="cards-title">
+    <h2 id="cards-title" class="visually-hidden">{t.cardsTitle}</h2>
+    <ul class="grid grid-3 clean-list">
+      {
+        t.cards.map((c) => (
+          <li class="card card-link">
+            <p class="eyebrow">{c.eyebrow}</p>
+            <h3>{c.title}</h3>
+            <p class="muted">{c.text}</p>
+            <p class="more">
+              <a href={routes[c.route as RouteKey][lang]}>{c.link} →</a>
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="wrap" aria-labelledby="now-title">
+    <div class="band now">
+      <div class="band-head">
+        <h2 id="now-title">{t.nowTitle}</h2>
+        <p class="now-date muted">
+          {t.nowUpdated}: <time datetime={now.data.updated.toISOString().slice(0, 10)}>{postDate(lang, now.data.updated)}</time>
+        </p>
+      </div>
+      <div class="prose now-body">
+        <NowContent />
+      </div>
+    </div>
+  </section>
+
+  {
+    posts.length > 0 && (
+      <section class="section wrap" aria-labelledby="posts-title">
+        <h2 id="posts-title">{t.postsTitle}</h2>
+        <PostList lang={lang} posts={posts} />
+      </section>
+    )
+  }
+</Base>
+
+<style>
+  /* Full-bleed Milky Way banner. Flat dark overlay keeps text at AA contrast. */
+  .space-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: var(--black);
+    color: #ffffff;
+    min-height: min(78svh, 46rem);
+    display: grid;
+    align-items: end;
+  }
+  :global(.space-bg) {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+  }
+  .space-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgb(17 17 17 / 0.6); /* old site overlay #111 */
+  }
+  .space-hero .eyebrow {
+    color: var(--magenta-light);
+  }
+  .space-hero .lead {
+    color: rgb(255 255 255 / 0.85);
+  }
+  .space-hero :global(.portrait) {
+    border-color: #ffffff;
+    box-shadow: none;
+  }
+  .space-hero :global(.motif-cell) {
+    fill: rgb(17 17 17 / 0.5);
+    stroke: #888888;
+  }
+  .hero {
+    display: grid;
+    gap: 2rem;
+    padding-block: clamp(3rem, 10vw, 6rem) clamp(2.5rem, 7vw, 4.5rem);
+  }
+  .hero h1 {
+    margin-bottom: 1rem;
+  }
+  .hero-media {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    order: -1;
+  }
+  :global(.portrait) {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--surface);
+    box-shadow: 0 0 0 1px var(--border);
+  }
+  @media (min-width: 56rem) {
+    .hero {
+      grid-template-columns: 1fr auto;
+      align-items: center;
+    }
+    .hero-media {
+      order: 0;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    :global(.portrait) {
+      width: 240px;
+      height: 240px;
+    }
+  }
+  .now {
+    display: grid;
+    gap: 0.5rem;
+  }
+  .now-date {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  .band-head {
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+  .now-body :global(ul) {
+    margin: 0;
+  }
+  .now-body :global(strong) {
+    color: var(--band-text);
+  }
+</style>

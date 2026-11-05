@@ -1,0 +1,18 @@
+---
+/**
+ * Shows its content only between `from` and `until` (ISO dates with offset).
+ * The build picks the right state; a tiny script in the layout re-checks in the
+ * visitor's browser, so the page flips on time even without a rebuild.
+ */
+interface Props {
+  from?: string;
+  until?: string;
+  as?: 'div' | 'span' | 'p' | 'li' | 'dd';
+  class?: string;
+}
+const { from, until, as: Tag = 'div', class: cls } = Astro.props;
+const now = Date.now();
+const visible = (!from || now >= Date.parse(from)) && (!until || now < Date.parse(until));
+---
+
+<Tag class={cls} data-from={from} data-until={until} hidden={!visible}><slot /></Tag>

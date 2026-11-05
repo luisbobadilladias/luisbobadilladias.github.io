@@ -1,0 +1,51 @@
+{
+  "name": "Luis Bobadilla Dias",
+  "role": "Senior Data Engineer",
+  "location": "Asunción, Paraguay",
+  "description": "Luis Bobadilla Dias, Senior Data Engineer en Asunción. Pipelines de datos en AWS, consultoría para empresas y el curso De Excel a Python (con IA).",
+  "skipLink": "Saltar al contenido",
+  "navLabel": "Principal",
+  "nav": {
+    "home": "Inicio",
+    "career": "Carrera",
+    "consulting": "Consultoría",
+    "teaching": "Enseñanza",
+    "projects": "Proyectos",
+    "blog": "Notas"
+  },
+  "langToggle": {
+    "label": "Idioma",
+    "switchTo": "Read this page in English"
+  },
+  "themeToggle": "Modo oscuro",
+  "footer": {
+    "title": "Hablemos",
+    "text": "¿Tenés un proyecto de datos, querés traer un taller a tu empresa o tenés dudas sobre el curso? Escribime.",
+    "emailLabel": "Email",
+    "whatsappLabel": "WhatsApp",
+    "whatsappMessage": "Hola Luis, vi tu sitio y te quería consultar sobre ",
+    "rights": "Hecho en Asunción.",
+    "rss": "RSS de las notas"
+  },
+  "ui": {
+    "readMore": "Leer más",
+    "backToBlog": "Volver a las notas",
+    "publishedOn": "Publicado el",
+    "updatedOn": "Actualizado el",
+    "tags": "Etiquetas",
+    "postsTagged": "Notas con la etiqueta",
+    "allPosts": "Todas las notas",
+    "noPosts": "Todavía no hay notas.",
+    "comingSoon": "Detalles en preparación",
+    "status": {
+      "in-progress": "En desarrollo",
+      "available": "Disponible",
+      "archived": "Archivado"
+    },
+    "visit": "Ver sitio",
+    "repo": "Ver código",
+    "notFoundTitle": "No encontré esa página",
+    "notFoundText": "Puede que el enlace esté viejo. Probá desde el inicio.",
+    "notFoundHome": "Ir al inicio"
+  }
+}

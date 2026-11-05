@@ -1,0 +1,45 @@
+{
+  "title": "Data consulting",
+  "description": "Consulting for SMEs and remote teams: data pipelines, AWS architecture, cloud cost optimization, fractional data lead, and automated Excel reporting.",
+  "lead": "I work with small and mid-sized companies in Paraguay and with remote teams that need their data sorted out without hiring a full team on day one.",
+  "servicesTitle": "Services",
+  "services": [
+    {
+      "title": "Data engineering and pipelines",
+      "text": "I bring the data from your systems (ERP, e-commerce, spreadsheets, APIs) into one place, clean and updated automatically."
+    },
+    {
+      "title": "Cloud architecture (AWS)",
+      "text": "I design or review your data platform on AWS so it's simple to run, secure, and easy to scale when you need it."
+    },
+    {
+      "title": "Cost optimization",
+      "text": "We look at what you're paying for in the cloud and why. I turn off what you don't need and redesign what costs more than it's worth."
+    },
+    {
+      "title": "Fractional data lead",
+      "text": "A few hours a week to set priorities, review your team's work and make technical decisions, without hiring a full-time lead."
+    },
+    {
+      "title": "Automated Excel reporting",
+      "text": "That report someone builds by hand every Monday becomes a process that runs on its own and lands in your inbox ready to go."
+    }
+  ],
+  "processTitle": "How we work",
+  "process": [
+    { "title": "Intro call", "text": "30 minutes to understand the problem. Free." },
+    { "title": "Proposal", "text": "You get scope, timeline and cost in writing." },
+    { "title": "Delivery in stages", "text": "Progress you can see and test along the way, not a black box at the end." },
+    { "title": "Handover", "text": "Documentation and a session with your team so you don't depend on me." }
+  ],
+  "casesTitle": "Case studies",
+  "casesNote": "Projects I worked on directly.",
+  "cta": {
+    "title": "Want to talk it through?",
+    "text": "Tell me what you need and we'll see whether I can help.",
+    "whatsapp": "Book a call",
+    "whatsappMessage": "Hi Luis, I'd like to book a call about a data project for my company.",
+    "email": "Send me an email",
+    "emailSubject": "Inquiry: data project"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "title": "Curso De Excel a Python (con IA)",
+  "description": "Curso para profesionales que viven en Excel: aprendé Python y pandas desde cero con ejemplos reales de Paraguay. Masterclass gratis el 11/11/2026.",
+  "eyebrow": "Curso",
+  "lead": "Para profesionales que viven en Excel y quieren dejar de hacer a mano lo que se repite cada semana. Empezamos de cero, con ejemplos reales de Paraguay: guaraníes, IVA, sucursales.",
+  "forWhoTitle": "Es para vos si…",
+  "forWho": [
+    "Armás reportes en Excel todas las semanas y siempre son los mismos pasos.",
+    "Cruzás planillas con BUSCARV y las tablas dinámicas se te quedan cortas.",
+    "Nunca programaste y te gustaría empezar con algo útil para tu trabajo.",
+    "Querés usar IA para escribir código, pero entendiendo lo que hace."
+  ],
+  "outcomesTitle": "Al terminar vas a poder",
+  "outcomes": [
+    "Leer, limpiar y cruzar archivos de Excel con Python.",
+    "Rehacer tus tablas dinámicas y fórmulas con pandas.",
+    "Consolidar los archivos de todas tus sucursales en un solo reporte.",
+    "Pedirle código a una IA, revisarlo y corregirlo."
+  ],
+  "masterclass": {
+    "title": "Masterclass gratis",
+    "text": "Una clase en vivo para ver cómo se ve un reporte de Excel hecho en Python, y decidir si el curso es para vos.",
+    "cta": "Anotate a la masterclass",
+    "when": "Cuándo",
+    "where": "Dónde",
+    "timeSuffix": "(hora de Paraguay)"
+  },
+  "cohort": {
+    "title": "La cohorte",
+    "classesLabel": "Clases",
+    "classesValue": "{n} clases en vivo",
+    "scheduleLabel": "Horario",
+    "datesLabel": "Fechas",
+    "datesValue": "Del {start} al {end}",
+    "priceLabel": "Inversión",
+    "launchPrice": "{price} precio de lanzamiento, hasta el {date}",
+    "regularPriceAfter": "Después, {price}",
+    "regularPrice": "{price}",
+    "cta": "Inscribite",
+    "and": "y"
+  },
+  "waitlist": {
+    "title": "La inscripción de esta cohorte ya cerró",
+    "text": "Anotate y te aviso apenas abra la próxima.",
+    "cta": "Sumate a la lista de espera de la próxima cohorte"
+  },
+  "syllabusTitle": "Programa",
+  "syllabusLead": "Ocho clases. En cada una tomamos algo que ya hacés en Excel y lo hacemos en Python.",
+  "syllabusExcel": "En Excel",
+  "syllabusPython": "En pandas",
+  "syllabus": [
+    {
+      "title": "De la planilla al notebook",
+      "text": "Qué es Python, cómo se usa un notebook y cómo abrir tu primer Excel con pandas.",
+      "excel": "Abrir un archivo",
+      "python": "pd.read_excel()"
+    },
+    {
+      "title": "Filtrar, ordenar y calcular",
+      "text": "Columnas nuevas con fórmulas, filtros y orden. Calculamos el IVA del 10 % y del 5 % sobre las ventas.",
+      "excel": "Autofiltro y fórmulas",
+      "python": "df[cond], sort_values()"
+    },
+    {
+      "title": "Limpiar datos",
+      "text": "Espacios de más, fechas como texto y montos en guaraníes con puntos. Todo lo que rompe un reporte.",
+      "excel": "ESPACIOS, Buscar y reemplazar",
+      "python": "str.strip(), to_numeric()"
+    },
+    {
+      "title": "Cruzar tablas",
+      "text": "Unimos ventas con el catálogo de productos y la lista de sucursales.",
+      "excel": "BUSCARV / BUSCARX",
+      "python": "merge()"
+    },
+    {
+      "title": "Resumir",
+      "text": "Ventas por sucursal y por mes, totales y promedios.",
+      "excel": "Tabla dinámica, SUMAR.SI",
+      "python": "pivot_table(), groupby()"
+    },
+    {
+      "title": "Gráficos y salida a Excel",
+      "text": "Gráficos rápidos y un Excel final con formato para mandar a quien lo necesite.",
+      "excel": "Insertar gráfico",
+      "python": "plot(), to_excel()"
+    },
+    {
+      "title": "Automatizar",
+      "text": "Leer todos los archivos de una carpeta y consolidarlos en uno. El reporte del lunes, en un clic.",
+      "excel": "Copiar y pegar hojas",
+      "python": "glob + concat()"
+    },
+    {
+      "title": "IA como copiloto y proyecto final",
+      "text": "Cómo pedirle código a una IA, cómo revisarlo y cómo darte cuenta cuando se equivoca. Cerramos con un proyecto sobre tus propios datos.",
+      "excel": "Tu reporte de siempre",
+      "python": "Tu script, explicado"
+    }
+  ],
+  "datasetNote": "Practicamos con Distribuidora Ñandutí, un dataset ficticio de una distribuidora paraguaya con ventas, productos y sucursales.",
+  "faqTitle": "Preguntas frecuentes",
+  "faq": [
+    {
+      "q": "¿Necesito saber programar?",
+      "a": "No. Empezamos desde cero. Si sabés usar Excel, tenés la base que hace falta."
+    },
+    {
+      "q": "¿Qué computadora necesito?",
+      "a": "Cualquier notebook con Windows, Mac o Linux y conexión a internet. No hace falta comprar ningún programa."
+    },
+    {
+      "q": "¿Las clases son en vivo?",
+      "a": "Sí, son en vivo y online. Podés hacer preguntas durante la clase."
+    },
+    {
+      "q": "¿Y si me pierdo una clase?",
+      "a": "Escribime y vemos cómo te ponés al día antes de la siguiente."
+    },
+    {
+      "q": "¿Qué papel tiene la IA?",
+      "a": "La usamos como asistente para escribir y explicar código. Primero aprendés a entender lo que hace, así podés revisar lo que te propone."
+    },
+    {
+      "q": "¿Cómo se paga?",
+      "a": "Completá el formulario de inscripción y te escribo con las opciones de pago."
+    }
+  ],
+  "workshops": {
+    "title": "Talleres para empresas",
+    "text": "Llevo el curso a tu equipo, adaptado a sus planillas y a sus procesos. Puede ser en tu oficina o online.",
+    "cta": "Consultá por un taller",
+    "whatsappMessage": "Hola Luis, me interesa un taller de Excel a Python para mi equipo."
+  }
+}

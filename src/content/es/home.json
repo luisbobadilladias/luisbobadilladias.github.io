@@ -1,0 +1,34 @@
+{
+  "title": "Luis Bobadilla Dias, Senior Data Engineer",
+  "description": "Senior Data Engineer en Asunción. Construyo pipelines de datos en AWS, asesoro a empresas y enseño a pasar de Excel a Python.",
+  "greeting": "Hola, soy Luis.",
+  "tagline": "Soy Senior Data Engineer en Asunción. Construyo plataformas de datos, ayudo a empresas a ordenar los suyos y enseño a dejar de copiar y pegar en Excel.",
+  "photoAlt": "Luis Bobadilla Dias, sonriendo con lentes y remera negra, de brazos cruzados",
+  "cardsTitle": "En qué trabajo",
+  "cards": [
+    {
+      "route": "career",
+      "eyebrow": "Tiempo completo",
+      "title": "Data Engineering",
+      "text": "Lakehouse en AWS, ingesta, Airflow y dbt en producción. Hoy en Plub.",
+      "link": "Ver mi carrera"
+    },
+    {
+      "route": "consulting",
+      "eyebrow": "Para empresas",
+      "title": "Consultoría",
+      "text": "Pipelines, arquitectura en AWS, costos de nube y reportes que se arman solos.",
+      "link": "Ver servicios"
+    },
+    {
+      "route": "teaching",
+      "eyebrow": "Curso",
+      "title": "Enseñanza",
+      "text": "De Excel a Python (con IA): desde cero, con ejemplos en guaraníes, IVA y sucursales.",
+      "link": "Ver el curso"
+    }
+  ],
+  "nowTitle": "Ahora",
+  "nowUpdated": "Actualizado",
+  "postsTitle": "Últimas notas"
+}

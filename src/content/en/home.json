@@ -1,0 +1,34 @@
+{
+  "title": "Luis Bobadilla Dias, Senior Data Engineer",
+  "description": "Senior Data Engineer in Asunción, Paraguay. I build data pipelines on AWS, consult for companies, and teach people to go from Excel to Python.",
+  "greeting": "Hi, I'm Luis.",
+  "tagline": "I'm a Senior Data Engineer in Asunción, Paraguay. I build data platforms, help companies get their data in order, and teach people to stop copy-pasting in Excel.",
+  "photoAlt": "Luis Bobadilla Dias smiling, wearing glasses and a black polo shirt, arms crossed",
+  "cardsTitle": "What I do",
+  "cards": [
+    {
+      "route": "career",
+      "eyebrow": "Full-time",
+      "title": "Data engineering",
+      "text": "AWS lakehouse, ingestion, Airflow and dbt in production. Currently at Plub.",
+      "link": "See my career"
+    },
+    {
+      "route": "consulting",
+      "eyebrow": "For companies",
+      "title": "Consulting",
+      "text": "Pipelines, AWS architecture, cloud costs, and reports that build themselves.",
+      "link": "See services"
+    },
+    {
+      "route": "teaching",
+      "eyebrow": "Course",
+      "title": "Teaching",
+      "text": "From Excel to Python (with AI): from scratch, with real examples from Paraguay.",
+      "link": "See the course"
+    }
+  ],
+  "nowTitle": "Now",
+  "nowUpdated": "Updated",
+  "postsTitle": "Latest notes"
+}

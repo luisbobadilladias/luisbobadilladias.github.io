@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../lib/content';
+const ui = site.es.ui;
+const en = site.en.ui;
+---
+
+<Base lang="es" title={ui.notFoundTitle} description={ui.notFoundText} altPath="/en/" noindex>
+  <section class="page-head wrap">
+    <div>
+      <p class="eyebrow">404</p>
+      <h1>{ui.notFoundTitle}</h1>
+      <p class="lead">{ui.notFoundText}</p>
+      <p lang="en" class="muted">{en.notFoundTitle}. {en.notFoundText}</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/">{ui.notFoundHome}</a>
+        <a class="btn btn-secondary" href="/en/" lang="en">{en.notFoundHome}</a>
+      </div>
+    </div>
+  </section>
+</Base>

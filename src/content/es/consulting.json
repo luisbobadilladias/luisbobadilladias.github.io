@@ -1,0 +1,45 @@
+{
+  "title": "Consultoría de datos",
+  "description": "Consultoría para pymes y equipos remotos: pipelines de datos, arquitectura en AWS, optimización de costos, data lead fraccional y automatización de reportes en Excel.",
+  "lead": "Trabajo con pymes de Paraguay y con equipos remotos que necesitan ordenar sus datos sin armar un equipo entero desde el día uno.",
+  "servicesTitle": "Servicios",
+  "services": [
+    {
+      "title": "Data engineering y pipelines",
+      "text": "Llevo los datos de tus sistemas (ERP, e-commerce, planillas, APIs) a un solo lugar, limpios y actualizados de forma automática."
+    },
+    {
+      "title": "Arquitectura en la nube (AWS)",
+      "text": "Diseño o reviso tu plataforma de datos en AWS para que sea simple de operar, segura y fácil de escalar cuando haga falta."
+    },
+    {
+      "title": "Optimización de costos",
+      "text": "Revisamos qué estás pagando en la nube y por qué. Apago lo que sobra y rediseño lo que cuesta más de lo que aporta."
+    },
+    {
+      "title": "Data lead fraccional",
+      "text": "Algunas horas por semana para definir prioridades, revisar el trabajo del equipo y tomar decisiones técnicas, sin contratar un líder a tiempo completo."
+    },
+    {
+      "title": "Reportes de Excel automatizados",
+      "text": "Ese reporte que alguien arma a mano cada lunes lo convierto en un proceso que corre solo y te llega listo."
+    }
+  ],
+  "processTitle": "Cómo trabajamos",
+  "process": [
+    { "title": "Charla inicial", "text": "30 minutos para entender el problema. Sin costo." },
+    { "title": "Propuesta", "text": "Te mando por escrito el alcance, los plazos y el costo." },
+    { "title": "Entrega por etapas", "text": "Avances que podés ver y probar, no una caja negra al final." },
+    { "title": "Traspaso", "text": "Documentación y una sesión con tu equipo para que no dependan de mí." }
+  ],
+  "casesTitle": "Casos",
+  "casesNote": "Proyectos en los que trabajé directamente.",
+  "cta": {
+    "title": "¿Lo charlamos?",
+    "text": "Contame qué necesitás y vemos si te puedo ayudar.",
+    "whatsapp": "Agendá una charla",
+    "whatsappMessage": "Hola Luis, quiero agendar una charla sobre un proyecto de datos para mi empresa.",
+    "email": "Escribime por email",
+    "emailSubject": "Consulta: proyecto de datos"
+  }
+}

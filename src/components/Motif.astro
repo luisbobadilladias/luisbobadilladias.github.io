@@ -1,0 +1,72 @@
+---
+/**
+ * Decorative spreadsheet grid with one highlighted cell holding "›".
+ * Always rendered in its own box (never behind text) and hidden from assistive tech.
+ */
+interface Props {
+  class?: string;
+  cols?: number;
+  rows?: number;
+  /** zero-based [col, row] of the highlighted cell */
+  active?: [number, number];
+}
+const { class: cls = '', cols = 5, rows = 3, active = [3, 1] } = Astro.props;
+const w = 30;
+const h = 20;
+const cells = Array.from({ length: cols * rows }, (_, i) => ({ c: i % cols, r: Math.floor(i / cols) }));
+---
+
+<svg
+  class:list={['motif', cls]}
+  viewBox={`-1 -1 ${cols * w + 2} ${rows * h + 2}`}
+  width={cols * w + 2}
+  height={rows * h + 2}
+  aria-hidden="true"
+  focusable="false"
+>
+  {
+    cells.map(({ c, r }) => {
+      const on = c === active[0] && r === active[1];
+      return (
+        <rect
+          x={c * w}
+          y={r * h}
+          width={w}
+          height={h}
+          class={on ? 'motif-on' : 'motif-cell'}
+        />
+      );
+    })
+  }
+  <text x={active[0] * w + w / 2} y={active[1] * h + h / 2 + 1} class="motif-mark">›</text>
+</svg>
+
+<style>
+  .motif {
+    flex: none;
+    width: 7.5rem;
+  }
+  .motif-cell {
+    fill: var(--motif-cell);
+    stroke: var(--border);
+    stroke-width: 1;
+  }
+  .motif-on {
+    fill: var(--motif-on);
+    stroke: var(--motif-on);
+    stroke-width: 1.5;
+  }
+  .motif-mark {
+    fill: var(--motif-mark);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 15px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+  }
+  :global(.band) .motif-cell,
+  :global(.site-footer) .motif-cell {
+    fill: transparent;
+    stroke: var(--band-border);
+  }
+</style>

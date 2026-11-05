@@ -1,0 +1,88 @@
+{
+  "title": "Career",
+  "description": "Senior Data Engineer at Plub: AWS lakehouse, ingestion frameworks, Airflow and dbt in production. Experience, education and certifications.",
+  "lead": "My job is making sure data shows up on time, clean, and in the hands of the people who need it.",
+  "cv": {
+    "label": "Download CV (PDF)",
+    "file": "/cv.pdf"
+  },
+  "plub": {
+    "title": "What I do at Plub",
+    "paragraphs": [
+      "I'm a Senior Data Engineer at Plub. I design and run the company's data platform: an AWS lakehouse that takes in data from different systems, organizes it, and makes it ready for reporting and analysis.",
+      "The work ranges from building reusable ingestion frameworks, so adding a new source is a matter of configuration instead of new code, to orchestrating pipelines with Airflow, modeling with dbt, and keeping everything running in production without surprises."
+    ],
+    "highlightsTitle": "What that looks like in practice",
+    "highlights": [
+      "We moved from always-on servers to a serverless architecture, with lower fixed costs and less maintenance.",
+      "Pipelines have tests, alerts and retries, so problems get caught before they reach a report.",
+      "Data access runs on tag-based permissions: each team sees what it should without waiting on a ticket.",
+      "Transformations live in dbt, versioned and documented, instead of scattered one-off queries."
+    ]
+  },
+  "timelineTitle": "Experience",
+  "timeline": [
+    {
+      "period": "Jun 2025 – present",
+      "role": "Senior Data Engineer",
+      "org": "Plub",
+      "text": "Multi-domain AWS lakehouse, ingestion frameworks, Airflow, dbt and data governance."
+    },
+    {
+      "period": "Aug 2024 – Jun 2025",
+      "role": "Data Engineer",
+      "org": "itti",
+      "text": "Event-driven ingestion pipelines on an AWS data lake, including Central Bank datasets. Orchestration with Airflow, plus monitoring."
+    },
+    {
+      "period": "Feb 2023 – Aug 2024",
+      "role": "Data Engineer",
+      "org": "Itaú Paraguay",
+      "text": "AWS data lake infrastructure for digital products, and automated data quality checks."
+    },
+    {
+      "period": "Jun 2022 – Feb 2023",
+      "role": "Back-end Developer",
+      "org": "Deriv",
+      "text": "Microservices and APIs for fintech applications, identity verification (KYC) and fraud checks."
+    },
+    {
+      "period": "Earlier",
+      "role": "Founder",
+      "org": "HSL",
+      "text": "Founded and ran a small software studio."
+    }
+  ],
+  "educationTitle": "Education",
+  "education": [
+    {
+      "degree": "MS in Computer Science",
+      "school": "Kansas State University",
+      "year": "2020",
+      "text": "Natural language processing research in collaboration with Lawrence Livermore National Laboratory."
+    },
+    {
+      "degree": "BS in Computer Science",
+      "school": "Kansas State University",
+      "year": "2018"
+    }
+  ],
+  "certsTitle": "Certifications",
+  "certs": [
+    { "name": "Apache Airflow Fundamentals", "issuer": "Astronomer", "year": "2023", "badge": "airflow" },
+    { "name": "AWS Certified Cloud Practitioner", "issuer": "Amazon Web Services", "year": "2023", "badge": "aws_cloud_practitioner" },
+    { "name": "RU101 and RU202", "issuer": "Redis University", "year": "2022" },
+    { "name": "University Teaching (Didáctica Universitaria)", "year": "2022" },
+    { "name": "PCEP, Certified Entry-Level Python Programmer", "issuer": "Python Institute", "year": "2022", "badge": "python1" },
+    { "name": "Diploma in Big Data Analysis", "issuer": "UCOM", "year": "2022" },
+    { "name": "JavaScript Developer I", "issuer": "Salesforce", "year": "2022", "badge": "sfjs1" },
+    { "name": "Platform Developer I", "issuer": "Salesforce", "year": "2021", "badge": "sfpd1" }
+  ],
+  "skillsTitle": "Tools",
+  "skills": [
+    { "group": "Languages", "items": ["Python", "SQL", "Node / TypeScript"] },
+    { "group": "Data", "items": ["Airflow", "dbt", "PostgreSQL", "Neo4j"] },
+    { "group": "Cloud and infrastructure", "items": ["AWS", "Docker"] },
+    { "group": "Machine learning", "items": ["PyTorch", "scikit-learn"] }
+  ]
+}

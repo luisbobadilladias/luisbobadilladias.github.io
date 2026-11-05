@@ -1,0 +1,111 @@
+---
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Motif from '../components/Motif.astro';
+import PostList from '../components/PostList.astro';
+import type { Lang } from '../lib/i18n';
+import { routes, otherLang } from '../lib/i18n';
+import { projectsPage, site, getProjects, getPosts } from '../lib/content';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = projectsPage[lang];
+const ui = site[lang].ui;
+const projects = await Promise.all(
+  (await getProjects(lang)).map(async (p) => ({ ...p, Content: (await render(p)).Content })),
+);
+const posts = (await getPosts(lang)).slice(0, 5);
+---
+
+<Base lang={lang} title={t.title} description={t.description} altPath={routes.projects[otherLang(lang)]} route="projects">
+  <header class="page-head wrap">
+    <div>
+      <h1>{t.title}</h1>
+      <p class="lead">{t.lead}</p>
+    </div>
+    <Motif class="page-motif" active={[0, 2]} />
+  </header>
+
+  <section class="section wrap" aria-labelledby="projects">
+    <h2 id="projects">{t.projectsTitle}</h2>
+    <div class="grid grid-2">
+      {
+        projects.map(({ data, Content }) => (
+          <article class="card">
+            <p class:list={['status', `status-${data.status}`]}>{ui.status[data.status]}</p>
+            <h3>{data.title}</h3>
+            <p class="summary">{data.summary}</p>
+            <div class="prose muted">
+              <Content />
+            </div>
+            {data.tags.length > 0 && (
+              <ul class="chips">
+                {data.tags.map((tag) => (
+                  <li class="chip">{tag}</li>
+                ))}
+              </ul>
+            )}
+            {(data.url || data.repo) && (
+              <p class="links">
+                {data.url && (
+                  <a href={data.url} target="_blank" rel="noopener">
+                    {ui.visit}
+                  </a>
+                )}
+                {data.repo && (
+                  <a href={data.repo} target="_blank" rel="noopener">
+                    {ui.repo}
+                  </a>
+                )}
+              </p>
+            )}
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section wrap" aria-labelledby="writing">
+    <h2 id="writing">{t.writingTitle}</h2>
+    {posts.length ? <PostList lang={lang} posts={posts} /> : <p class="muted">{ui.noPosts}</p>}
+    <p class="all"><a href={routes.blog[lang]}>{t.allPosts} →</a></p>
+  </section>
+</Base>
+
+<style>
+  .status {
+    align-self: flex-start;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.55rem;
+    border-radius: 0.3rem;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    margin-bottom: 0.9rem;
+  }
+  .status-in-progress {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .status-available {
+    background: var(--chip-bg);
+    border-color: var(--chip-bg);
+    color: var(--chip-text);
+  }
+  .summary {
+    font-weight: 500;
+  }
+  .links {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0 0;
+  }
+  .all {
+    margin-top: 1.5rem;
+    font-weight: 700;
+  }
+</style>

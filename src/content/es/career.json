@@ -1,0 +1,88 @@
+{
+  "title": "Carrera",
+  "description": "Senior Data Engineer en Plub: lakehouse en AWS, frameworks de ingesta, Airflow y dbt en producción. Trayectoria, formación y certificaciones.",
+  "lead": "Me dedico a que los datos lleguen a tiempo, limpios y a quien los necesita.",
+  "cv": {
+    "label": "Descargar CV (PDF, en inglés)",
+    "file": "/cv.pdf"
+  },
+  "plub": {
+    "title": "Qué hago en Plub",
+    "paragraphs": [
+      "Soy Senior Data Engineer en Plub. Diseño y opero la plataforma de datos de la empresa: un lakehouse en AWS que recibe información de distintos sistemas, la ordena y la deja lista para reportes y análisis.",
+      "El trabajo va desde construir frameworks de ingesta reutilizables, para que sumar una fuente nueva sea configurar y no reescribir, hasta orquestar los pipelines con Airflow, modelar con dbt y cuidar que todo corra en producción sin sorpresas."
+    ],
+    "highlightsTitle": "Lo que eso significa en la práctica",
+    "highlights": [
+      "Pasamos de servidores siempre encendidos a una arquitectura serverless: menos costo fijo y menos mantenimiento.",
+      "Los pipelines tienen pruebas, alertas y reintentos, así que un error se detecta antes de que llegue a un reporte.",
+      "El acceso a los datos es por permisos basados en etiquetas: cada equipo ve lo que le corresponde sin esperar un ticket.",
+      "Las transformaciones viven en dbt, versionadas y documentadas, en vez de consultas sueltas."
+    ]
+  },
+  "timelineTitle": "Trayectoria",
+  "timeline": [
+    {
+      "period": "jun 2025 – hoy",
+      "role": "Senior Data Engineer",
+      "org": "Plub",
+      "text": "Lakehouse multi-dominio en AWS, frameworks de ingesta, Airflow, dbt y gobierno de datos."
+    },
+    {
+      "period": "ago 2024 – jun 2025",
+      "role": "Data Engineer",
+      "org": "itti",
+      "text": "Pipelines de ingesta orientados a eventos sobre un data lake en AWS, incluidos datasets del Banco Central. Orquestación con Airflow y monitoreo."
+    },
+    {
+      "period": "feb 2023 – ago 2024",
+      "role": "Data Engineer",
+      "org": "Itaú Paraguay",
+      "text": "Infraestructura de data lake en AWS para productos digitales y automatización de controles de calidad de datos."
+    },
+    {
+      "period": "jun 2022 – feb 2023",
+      "role": "Back-end Developer",
+      "org": "Deriv",
+      "text": "Microservicios y APIs para aplicaciones fintech, verificación de identidad (KYC) y controles de fraude."
+    },
+    {
+      "period": "Antes",
+      "role": "Fundador",
+      "org": "HSL",
+      "text": "Fundé y dirigí un pequeño estudio de software."
+    }
+  ],
+  "educationTitle": "Formación",
+  "education": [
+    {
+      "degree": "Máster en Ciencias de la Computación (MS)",
+      "school": "Kansas State University",
+      "year": "2020",
+      "text": "Investigación en procesamiento de lenguaje natural en colaboración con Lawrence Livermore National Laboratory."
+    },
+    {
+      "degree": "Licenciatura en Ciencias de la Computación (BS)",
+      "school": "Kansas State University",
+      "year": "2018"
+    }
+  ],
+  "certsTitle": "Certificaciones",
+  "certs": [
+    { "name": "Apache Airflow Fundamentals", "issuer": "Astronomer", "year": "2023", "badge": "airflow" },
+    { "name": "AWS Certified Cloud Practitioner", "issuer": "Amazon Web Services", "year": "2023", "badge": "aws_cloud_practitioner" },
+    { "name": "RU101 y RU202", "issuer": "Redis University", "year": "2022" },
+    { "name": "Didáctica Universitaria", "year": "2022" },
+    { "name": "PCEP, Certified Entry-Level Python Programmer", "issuer": "Python Institute", "year": "2022", "badge": "python1" },
+    { "name": "Diplomado en Análisis de Big Data", "issuer": "UCOM", "year": "2022" },
+    { "name": "JavaScript Developer I", "issuer": "Salesforce", "year": "2022", "badge": "sfjs1" },
+    { "name": "Platform Developer I", "issuer": "Salesforce", "year": "2021", "badge": "sfpd1" }
+  ],
+  "skillsTitle": "Herramientas",
+  "skills": [
+    { "group": "Lenguajes", "items": ["Python", "SQL", "Node / TypeScript"] },
+    { "group": "Datos", "items": ["Airflow", "dbt", "PostgreSQL", "Neo4j"] },
+    { "group": "Nube e infraestructura", "items": ["AWS", "Docker"] },
+    { "group": "Machine learning", "items": ["PyTorch", "scikit-learn"] }
+  ]
+}
