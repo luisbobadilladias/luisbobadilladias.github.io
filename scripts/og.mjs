@@ -21,6 +21,16 @@ const copy = {
   en: { line1: 'Data Platform Engineer · Asunción, Paraguay', line2: 'AWS lakehouses · dbt · Airflow · Consulting' },
 };
 
+// Brand mark: an accent block right after the name, like a terminal cursor (same proportions as the header).
+// Measure where the rendered name ends so the block follows it whatever font sharp picks.
+const NAME = { x: 80, y: 300, size: 76 };
+const nameSvg = `<text x="${NAME.x}" y="${NAME.y}" font-family="Helvetica Neue, Arial, sans-serif" font-weight="700" font-size="${NAME.size}" fill="#151515" letter-spacing="-1.5">Luis Bobadilla Dias</text>`;
+const { info: ink } = await sharp(Buffer.from(`<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">${nameSvg}</svg>`))
+  .trim()
+  .toBuffer({ resolveWithObject: true });
+const nameRight = -(ink.trimOffsetLeft ?? 0) + ink.width;
+const block = `<rect x="${(nameRight + NAME.size * 0.1).toFixed(1)}" y="${(NAME.y - NAME.size * 0.7).toFixed(1)}" width="${(NAME.size * 0.42).toFixed(1)}" height="${(NAME.size * 0.7).toFixed(1)}" fill="#CC005F"/>`;
+
 function cells(x, y) {
   let s = '';
   for (let r = 0; r < 3; r++)
@@ -37,7 +47,8 @@ for (const [lang, t] of Object.entries(copy)) {
     <rect width="1200" height="630" fill="#FFFFFF"/>
     <rect x="0" y="590" width="1200" height="40" fill="#151515"/>
     ${cells(900, 64)}
-    <text x="80" y="300" font-family="Helvetica Neue, Arial, sans-serif" font-weight="700" font-size="76" fill="#151515" letter-spacing="-1.5">Luis Bobadilla Dias</text>
+    ${nameSvg}
+    ${block}
     <text x="80" y="370" font-family="Helvetica Neue, Arial, sans-serif" font-size="36" fill="#CC005F">${t.line1}</text>
     <text x="80" y="430" font-family="Helvetica Neue, Arial, sans-serif" font-size="30" fill="#555555">${t.line2}</text>
   </svg>`;
