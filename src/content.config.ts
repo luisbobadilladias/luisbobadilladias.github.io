@@ -2,23 +2,9 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
-// Entry ids keep the language folder, e.g. "es/blog/buscarv-en-pandas".
+// Entry ids keep the language folder, e.g. "es/cases/my-case".
 const keepPath = ({ entry }: { entry: string }) => entry.replace(/\.mdx?$/, '');
 const base = './src/content';
-
-const blog = defineCollection({
-  loader: glob({ pattern: '*/blog/*.md', base, generateId: keepPath }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    date: z.coerce.date(),
-    updated: z.coerce.date().optional(),
-    tags: z.array(z.string()).default([]),
-    // Same value in the ES and EN version of a post links them for the language toggle.
-    translationKey: z.string().optional(),
-    draft: z.boolean().default(false),
-  }),
-});
 
 const cases = defineCollection({
   loader: glob({ pattern: '*/cases/*.md', base, generateId: keepPath }),
@@ -56,4 +42,4 @@ const now = defineCollection({
   }),
 });
 
-export const collections = { blog, cases, projects, now };
+export const collections = { cases, projects, now };

@@ -1,6 +1,5 @@
 ---
 import type { Lang } from '../lib/i18n';
-import { rssPath } from '../lib/i18n';
 import { site, contact, whatsappUrl, mailtoUrl } from '../lib/content';
 
 interface Props {
@@ -16,6 +15,7 @@ const links = [
   { label: f.whatsappLabel, href: whatsappUrl(f.whatsappMessage), text: '+595 971 969 066' },
   { label: 'LinkedIn', href: contact.linkedin, text: strip(contact.linkedin) },
   { label: 'GitHub', href: contact.github, text: strip(contact.github) },
+  { label: 'Substack', href: contact.substack, text: strip(contact.substack) },
   { label: 'Instagram', href: contact.instagram, text: strip(contact.instagram) },
 ].filter((l) => l.href);
 ---
@@ -44,7 +44,7 @@ const links = [
       }
     </ul>
     <p class="footer-meta">
-      © {new Date().getFullYear()} {s.name}. {f.rights} · <a href={rssPath(lang)}>{f.rss}</a>
+      © {new Date().getFullYear()} {s.name}. {f.rights}
     </p>
   </div>
 </footer>

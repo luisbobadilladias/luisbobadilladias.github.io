@@ -1,11 +1,9 @@
 {
-  "title": "Projects and notes",
-  "description": "Projects Luis Bobadilla Dias is working on, plus notes on data, Python and automation.",
+  "title": "Projects and writing",
+  "description": "Projects Luis Bobadilla Dias is working on, plus writing on data, Python and automation.",
   "lead": "Things I'm building, and what I'm learning along the way.",
   "projectsTitle": "Projects",
-  "writingTitle": "Notes",
-  "allPosts": "See all notes",
-  "blogTitle": "Notes",
-  "blogDescription": "Notes on data engineering, Python, and automating work with data.",
-  "blogLead": "Short notes on data, Python and automation."
+  "writingTitle": "Writing",
+  "writingText": "I write about data, Python and automation on Substack.",
+  "writingLink": "Read on Substack"
 }

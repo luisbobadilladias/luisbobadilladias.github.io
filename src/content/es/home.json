@@ -1,8 +1,8 @@
 {
-  "title": "Luis Bobadilla Dias, Senior Data Engineer",
-  "description": "Senior Data Engineer en Asunción. Construyo pipelines de datos en AWS, asesoro a empresas y enseño a pasar de Excel a Python.",
+  "title": "Luis Bobadilla Dias, Data Platform Engineer",
+  "description": "Data Platform Engineer en Asunción. Construyo pipelines de datos en AWS, asesoro a empresas y enseño a pasar de Excel a Python.",
   "greeting": "Hola, soy Luis.",
-  "tagline": "Soy Senior Data Engineer en Asunción. Construyo plataformas de datos, ayudo a empresas a ordenar los suyos y enseño a dejar de copiar y pegar en Excel.",
+  "tagline": "Soy Data Platform Engineer en Asunción. Construyo plataformas de datos, ayudo a empresas a ordenar los suyos y enseño a dejar de copiar y pegar en Excel.",
   "photoAlt": "Luis Bobadilla Dias, sonriendo con lentes y remera negra, de brazos cruzados",
   "cardsTitle": "En qué trabajo",
   "cards": [
@@ -29,6 +29,5 @@
     }
   ],
   "nowTitle": "Ahora",
-  "nowUpdated": "Actualizado",
-  "postsTitle": "Últimas notas"
+  "nowUpdated": "Actualizado"
 }

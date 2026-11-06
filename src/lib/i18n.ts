@@ -9,29 +9,16 @@ export const routes = {
   consulting: { es: '/consultoria/', en: '/en/consulting/' },
   teaching: { es: '/ensenanza/', en: '/en/teaching/' },
   projects: { es: '/proyectos/', en: '/en/projects/' },
-  blog: { es: '/blog/', en: '/en/blog/' },
 } as const;
 
 export type RouteKey = keyof typeof routes;
 export const navKeys: RouteKey[] = ['career', 'consulting', 'teaching', 'projects'];
 
 export const otherLang = (lang: Lang): Lang => (lang === 'es' ? 'en' : 'es');
-export const postPath = (lang: Lang, slug: string) => `${routes.blog[lang]}${slug}/`;
-export const tagPath = (lang: Lang, tag: string) => `${routes.blog[lang]}tags/${slugify(tag)}/`;
-export const rssPath = (lang: Lang) => (lang === 'es' ? '/rss.xml' : '/en/rss.xml');
 
 export const locales: Record<Lang, string> = { es: 'es-PY', en: 'en-US' };
 
-export function slugify(s: string) {
-  return s
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '');
-}
-
-/** "es/blog/my-post" -> { lang: "es", slug: "my-post" } */
+/** "es/projects/my-project" -> { lang: "es", slug: "my-post" } */
 export function splitId(id: string) {
   const parts = id.split('/');
   return { lang: parts[0] as Lang, slug: parts[parts.length - 1] };

@@ -1,6 +1,6 @@
 {
   "title": "Career",
-  "description": "Senior Data Engineer at Plub: AWS lakehouse, ingestion frameworks, Airflow and dbt in production. Experience, education and certifications.",
+  "description": "Data Platform Engineer at Plub: AWS lakehouse, ingestion frameworks, Airflow and dbt in production. Experience, education and certifications.",
   "lead": "My job is making sure data shows up on time, clean, and in the hands of the people who need it.",
   "cv": {
     "label": "Download CV (PDF)",
@@ -9,7 +9,7 @@
   "plub": {
     "title": "What I do at Plub",
     "paragraphs": [
-      "I'm a Senior Data Engineer at Plub. I design and run the company's data platform: an AWS lakehouse that takes in data from different systems, organizes it, and makes it ready for reporting and analysis.",
+      "I'm a Data Platform Engineer at Plub. I design and run the company's data platform: an AWS lakehouse that takes in data from different systems, organizes it, and makes it ready for reporting and analysis.",
       "The work ranges from building reusable ingestion frameworks, so adding a new source is a matter of configuration instead of new code, to orchestrating pipelines with Airflow, modeling with dbt, and keeping everything running in production without surprises."
     ],
     "highlightsTitle": "What that looks like in practice",
@@ -24,7 +24,7 @@
   "timeline": [
     {
       "period": "Jun 2025 – present",
-      "role": "Senior Data Engineer",
+      "role": "Data Platform Engineer",
       "org": "Plub",
       "text": "Multi-domain AWS lakehouse, ingestion frameworks, Airflow, dbt and data governance."
     },

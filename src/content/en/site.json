@@ -1,8 +1,8 @@
 {
   "name": "Luis Bobadilla Dias",
-  "role": "Senior Data Engineer",
+  "role": "Data Platform Engineer",
   "location": "Asunción, Paraguay",
-  "description": "Luis Bobadilla Dias, Senior Data Engineer in Asunción, Paraguay. AWS data pipelines, data consulting for companies, and the course From Excel to Python (with AI).",
+  "description": "Luis Bobadilla Dias, Data Platform Engineer in Asunción, Paraguay. AWS data pipelines, data consulting for companies, and the course From Excel to Python (with AI).",
   "skipLink": "Skip to content",
   "navLabel": "Main",
   "nav": {
@@ -10,8 +10,7 @@
     "career": "Career",
     "consulting": "Consulting",
     "teaching": "Teaching",
-    "projects": "Projects",
-    "blog": "Notes"
+    "projects": "Projects"
   },
   "langToggle": {
     "label": "Language",
@@ -24,18 +23,9 @@
     "emailLabel": "Email",
     "whatsappLabel": "WhatsApp",
     "whatsappMessage": "Hi Luis, I found your site and wanted to ask about ",
-    "rights": "Made in Asunción.",
-    "rss": "Notes RSS feed"
+    "rights": "Made in Asunción."
   },
   "ui": {
-    "readMore": "Read more",
-    "backToBlog": "Back to notes",
-    "publishedOn": "Published",
-    "updatedOn": "Updated",
-    "tags": "Tags",
-    "postsTagged": "Notes tagged",
-    "allPosts": "All notes",
-    "noPosts": "No notes yet.",
     "comingSoon": "Details coming soon",
     "status": {
       "in-progress": "In progress",

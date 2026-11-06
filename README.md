@@ -33,10 +33,9 @@ src/content/
     career.json         Plub narrative, timeline, education, certifications, skills
     consulting.json     services, process, CTA copy
     course.json         course page copy: syllabus, FAQ, workshops
-    projects.json       projects and notes page headings
+    projects.json       projects page headings and the Substack blurb
     cases/*.md          consulting case studies (one file each)
     projects/*.md       project cards (one file each)
-    blog/*.md           posts
 ```
 
 If you change something in `es/`, change it in `en/` too.
@@ -70,24 +69,9 @@ Copy an existing file in `src/content/es/cases/` (or `projects/`), rename it, ed
 - Cases are sorted by `order`. Set `placeholder: true` to show a "details coming soon" card.
 - Projects use `status`: `in-progress`, `available` or `archived`. Optional `url` and `repo`.
 
-### Add a blog post
+### Writing
 
-Create `src/content/es/blog/my-slug.md` (the file name becomes the URL):
-
-```md
----
-title: Post title
-description: One or two sentences. Used for SEO and social previews.
-date: 2026-11-20
-tags: [pandas, excel]
-translationKey: my-topic   # optional: same value in the ES and EN versions links them
-draft: false               # true = only visible in `npm run dev`
----
-
-Text in Markdown. Code blocks with ```python get syntax highlighting.
-```
-
-The English version goes in `src/content/en/blog/` with its own slug. Tag pages and RSS (`/rss.xml`, `/en/rss.xml`) update automatically.
+Posts live on Substack (`substack` in `src/content/contact.json`). The site only links to it from the Projects page and the footer.
 
 ### Photo, CV and badges
 

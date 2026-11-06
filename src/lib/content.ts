@@ -30,11 +30,6 @@ export const projectsPage: Pair<typeof esProjects> = { es: esProjects, en: enPro
 
 const inLang = (lang: Lang) => (entry: { id: string }) => splitId(entry.id).lang === lang;
 
-export async function getPosts(lang: Lang) {
-  const posts = await getCollection('blog', (p) => inLang(lang)(p) && (import.meta.env.DEV || !p.data.draft));
-  return posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-}
-
 export async function getCases(lang: Lang) {
   return (await getCollection('cases', inLang(lang))).sort((a, b) => a.data.order - b.data.order);
 }

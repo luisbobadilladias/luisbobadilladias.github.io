@@ -2,10 +2,9 @@
 import { Image } from 'astro:assets';
 import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import PostList from '../components/PostList.astro';
 import type { Lang, RouteKey } from '../lib/i18n';
 import { routes, otherLang } from '../lib/i18n';
-import { home, site, getNow, getPosts } from '../lib/content';
+import { home, site, getNow } from '../lib/content';
 import { postDate } from '../lib/format';
 import { personSchema } from '../lib/seo';
 import photo from '../assets/luis.jpg';
@@ -19,7 +18,6 @@ const t = home[lang];
 const s = site[lang];
 const now = await getNow(lang);
 const { Content: NowContent } = await render(now);
-const posts = (await getPosts(lang)).slice(0, 3);
 ---
 
 <Base
@@ -91,15 +89,6 @@ const posts = (await getPosts(lang)).slice(0, 3);
       </div>
     </div>
   </section>
-
-  {
-    posts.length > 0 && (
-      <section class="section wrap" aria-labelledby="posts-title">
-        <h2 id="posts-title">{t.postsTitle}</h2>
-        <PostList lang={lang} posts={posts} />
-      </section>
-    )
-  }
 </Base>
 
 <style>

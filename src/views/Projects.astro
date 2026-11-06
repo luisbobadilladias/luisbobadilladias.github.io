@@ -1,10 +1,9 @@
 ---
 import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import PostList from '../components/PostList.astro';
 import type { Lang } from '../lib/i18n';
 import { routes, otherLang } from '../lib/i18n';
-import { projectsPage, site, getProjects, getPosts } from '../lib/content';
+import { projectsPage, site, contact, getProjects } from '../lib/content';
 
 interface Props {
   lang: Lang;
@@ -15,7 +14,6 @@ const ui = site[lang].ui;
 const projects = await Promise.all(
   (await getProjects(lang)).map(async (p) => ({ ...p, Content: (await render(p)).Content })),
 );
-const posts = (await getPosts(lang)).slice(0, 5);
 ---
 
 <Base lang={lang} title={t.title} description={t.description} altPath={routes.projects[otherLang(lang)]} route="projects">
@@ -67,8 +65,8 @@ const posts = (await getPosts(lang)).slice(0, 5);
 
   <section class="section wrap" aria-labelledby="writing">
     <h2 id="writing">{t.writingTitle}</h2>
-    {posts.length ? <PostList lang={lang} posts={posts} /> : <p class="muted">{ui.noPosts}</p>}
-    <p class="all"><a href={routes.blog[lang]}>{t.allPosts} →</a></p>
+    <p>{t.writingText}</p>
+    <p class="all"><a href={contact.substack} target="_blank" rel="me noopener">{t.writingLink} →</a></p>
   </section>
 </Base>
 

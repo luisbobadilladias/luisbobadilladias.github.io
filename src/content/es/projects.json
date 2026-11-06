@@ -1,11 +1,9 @@
 {
-  "title": "Proyectos y notas",
-  "description": "Proyectos en curso de Luis Bobadilla Dias y notas sobre datos, Python y automatización.",
+  "title": "Proyectos y escritos",
+  "description": "Proyectos en curso de Luis Bobadilla Dias y lo que escribe sobre datos, Python y automatización.",
   "lead": "Cosas que estoy construyendo y lo que voy aprendiendo en el camino.",
   "projectsTitle": "Proyectos",
-  "writingTitle": "Notas",
-  "allPosts": "Ver todas las notas",
-  "blogTitle": "Notas",
-  "blogDescription": "Notas sobre data engineering, Python y cómo automatizar el trabajo con datos.",
-  "blogLead": "Notas cortas sobre datos, Python y automatización."
+  "writingTitle": "Escritos",
+  "writingText": "Escribo sobre datos, Python y automatización en Substack.",
+  "writingLink": "Leer en Substack"
 }
