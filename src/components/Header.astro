@@ -91,11 +91,22 @@ const other = otherLang(lang);
     grid-area: brand;
     font-family: var(--font-head);
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
     letter-spacing: -0.01em;
     color: var(--text);
     text-decoration: none;
     padding-block: 0.5rem;
+    white-space: nowrap;
+  }
+  /* Brand mark: a solid accent block after the name, like a terminal cursor. */
+  .brand::after {
+    content: '';
+    display: inline-block;
+    width: 0.42em;
+    height: 0.7em;
+    margin-left: 0.1em;
+    background: var(--accent);
+    vertical-align: baseline;
   }
   .nav {
     grid-area: nav;
