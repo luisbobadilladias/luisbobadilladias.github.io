@@ -1,8 +1,8 @@
 {
   "title": "Luis Bobadilla Dias, Data Platform Engineer",
-  "description": "Data Platform Engineer en Asunción. Construyo pipelines de datos en AWS, asesoro a empresas y enseño a pasar de Excel a Python.",
+  "description": "Data Platform Engineer en Asunción, con más de 6 años en software y datos. Diseño y opero lakehouses en AWS con dbt y Airflow, y asesoro a empresas en su plataforma de datos.",
   "greeting": "Hola, soy Luis.",
-  "tagline": "Soy Data Platform Engineer en Asunción. Construyo plataformas de datos, ayudo a empresas a ordenar los suyos y enseño a dejar de copiar y pegar en Excel.",
+  "tagline": "Soy Data Platform Engineer, con más de 6 años en software y datos, los últimos 4 en banca y fintech. Diseño y opero plataformas de datos en AWS que funcionan en producción y que los equipos pueden usar por su cuenta.",
   "photoAlt": "Luis Bobadilla Dias, sonriendo con lentes y remera negra, de brazos cruzados",
   "cardsTitle": "En qué trabajo",
   "cards": [
@@ -10,7 +10,7 @@
       "route": "career",
       "eyebrow": "Tiempo completo",
       "title": "Data Engineering",
-      "text": "Lakehouse en AWS, ingesta, Airflow y dbt en producción. Hoy en Plub.",
+      "text": "Lakehouse multi-tenant en AWS, construido desde cero en Plub: S3, Glue, Athena, Lake Formation, dbt y Airflow.",
       "link": "Ver mi carrera"
     },
     {
@@ -24,7 +24,7 @@
       "route": "teaching",
       "eyebrow": "Curso",
       "title": "Enseñanza",
-      "text": "De Excel a Python (con IA): desde cero, con ejemplos en guaraníes, IVA y sucursales.",
+      "text": "Un curso para analistas que quieren pasar de Excel a Python, con ejemplos de Paraguay.",
       "link": "Ver el curso"
     }
   ],

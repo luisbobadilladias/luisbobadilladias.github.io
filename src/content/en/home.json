@@ -1,8 +1,8 @@
 {
   "title": "Luis Bobadilla Dias, Data Platform Engineer",
-  "description": "Data Platform Engineer in Asunción, Paraguay. I build data pipelines on AWS, consult for companies, and teach people to go from Excel to Python.",
+  "description": "Data Platform Engineer in Asunción, Paraguay, with 6+ years in software and data engineering. I design and run AWS lakehouses with dbt and Airflow, and consult for companies on their data platforms.",
   "greeting": "Hi, I'm Luis.",
-  "tagline": "I'm a Data Platform Engineer in Asunción, Paraguay. I build data platforms, help companies get their data in order, and teach people to stop copy-pasting in Excel.",
+  "tagline": "I'm a Data Platform Engineer with 6+ years in software and data engineering, the last 4 in banking and fintech. I design and run data platforms on AWS that hold up in production and that teams can use on their own.",
   "photoAlt": "Luis Bobadilla Dias smiling, wearing glasses and a black polo shirt, arms crossed",
   "cardsTitle": "What I do",
   "cards": [
@@ -10,7 +10,7 @@
       "route": "career",
       "eyebrow": "Full-time",
       "title": "Data engineering",
-      "text": "AWS lakehouse, ingestion, Airflow and dbt in production. Currently at Plub.",
+      "text": "A multi-tenant AWS lakehouse, built from scratch at Plub: S3, Glue, Athena, Lake Formation, dbt and Airflow.",
       "link": "See my career"
     },
     {
@@ -24,7 +24,7 @@
       "route": "teaching",
       "eyebrow": "Course",
       "title": "Teaching",
-      "text": "From Excel to Python (with AI): from scratch, with real examples from Paraguay.",
+      "text": "A course for analysts who want to move from Excel to Python, with examples from Paraguay.",
       "link": "See the course"
     }
   ],

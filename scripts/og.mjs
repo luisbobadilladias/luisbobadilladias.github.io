@@ -17,8 +17,8 @@ const avatar = await sharp(photo)
 await sharp(photo).resize(800, 800).jpeg({ quality: 82 }).toFile(new URL('luis.jpg', out).pathname);
 
 const copy = {
-  es: { line1: 'Data Platform Engineer · Asunción', line2: 'Data engineering · Consultoría · Enseñanza' },
-  en: { line1: 'Data Platform Engineer · Asunción, Paraguay', line2: 'Data engineering · Consulting · Teaching' },
+  es: { line1: 'Data Platform Engineer · Asunción', line2: 'Lakehouses en AWS · dbt · Airflow · Consultoría' },
+  en: { line1: 'Data Platform Engineer · Asunción, Paraguay', line2: 'AWS lakehouses · dbt · Airflow · Consulting' },
 };
 
 function cells(x, y) {

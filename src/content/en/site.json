@@ -2,7 +2,7 @@
   "name": "Luis Bobadilla Dias",
   "role": "Data Platform Engineer",
   "location": "Asunción, Paraguay",
-  "description": "Luis Bobadilla Dias, Data Platform Engineer in Asunción, Paraguay. AWS data pipelines, data consulting for companies, and the course From Excel to Python (with AI).",
+  "description": "Luis Bobadilla Dias, Data Platform Engineer in Asunción, Paraguay. AWS lakehouses, dbt and Airflow in production, and data platform consulting for companies.",
   "skipLink": "Skip to content",
   "navLabel": "Main",
   "nav": {
@@ -19,7 +19,7 @@
   "themeToggle": "Dark mode",
   "footer": {
     "title": "Let's talk",
-    "text": "Got a data project, want a workshop for your team, or have a question about the course? Get in touch.",
+    "text": "Got a data project or want a workshop for your team? Get in touch.",
     "emailLabel": "Email",
     "whatsappLabel": "WhatsApp",
     "whatsappMessage": "Hi Luis, I found your site and wanted to ask about ",

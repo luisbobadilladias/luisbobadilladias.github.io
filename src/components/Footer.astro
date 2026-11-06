@@ -1,6 +1,7 @@
 ---
 import type { Lang } from '../lib/i18n';
 import { site, contact, whatsappUrl, mailtoUrl } from '../lib/content';
+import { brandIcons } from '../lib/icons';
 
 interface Props {
   lang: Lang;
@@ -9,15 +10,14 @@ const { lang } = Astro.props;
 const s = site[lang];
 const f = s.footer;
 
-const strip = (u: string) => u.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+// Email shows the address so it can be copied; the rest show the network name.
 const links = [
-  { label: f.emailLabel, href: mailtoUrl(), text: contact.email },
-  { label: f.whatsappLabel, href: whatsappUrl(f.whatsappMessage), text: '+595 971 969 066' },
-  { label: 'LinkedIn', href: contact.linkedin, text: strip(contact.linkedin) },
-  { label: 'GitHub', href: contact.github, text: strip(contact.github) },
-  { label: 'Substack', href: contact.substack, text: strip(contact.substack) },
-  { label: 'Instagram', href: contact.instagram, text: strip(contact.instagram) },
-].filter((l) => l.href);
+  { label: f.emailLabel, href: mailtoUrl(), text: contact.email, icon: 'mail' },
+  { label: f.whatsappLabel, href: whatsappUrl(f.whatsappMessage), text: 'WhatsApp', icon: 'whatsapp' },
+  { label: 'LinkedIn', href: contact.linkedin, text: 'LinkedIn', icon: 'linkedin' },
+  { label: 'GitHub', href: contact.github, text: 'GitHub', icon: 'github' },
+  { label: 'Substack', href: contact.substack, text: 'Substack', icon: 'substack' },
+].filter((l) => l.href) as { label: string; href: string; text: string; icon: 'mail' | keyof typeof brandIcons }[];
 ---
 
 <footer class="site-footer" id="contacto">
@@ -32,12 +32,22 @@ const links = [
       {
         links.map((l) => (
           <li>
-            <span class="contact-label">{l.label}</span>
             <a
               href={l.href}
+              aria-label={l.text === l.label ? undefined : `${l.label}: ${l.text}`}
               {...(l.href.startsWith('http') ? { rel: 'me noopener', target: '_blank' } : {})}
             >
-              {l.text}
+              {l.icon === 'mail' ? (
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                  <path d={brandIcons[l.icon]} />
+                </svg>
+              )}
+              <span>{l.text}</span>
             </a>
           </li>
         ))
@@ -70,29 +80,30 @@ const links = [
     max-width: 34rem;
   }
   .contact-list {
-    display: grid;
-    gap: 1rem 2rem;
-    margin-top: 1.5rem;
-  }
-  @media (min-width: 40rem) {
-    .contact-list {
-      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-    }
-  }
-  .contact-list li {
-    display: grid;
-    gap: 0.1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
   }
   .contact-list a {
-    display: inline-block;
-    padding-block: 0.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--band-border);
+    border-radius: 999px;
+    text-decoration: none;
     overflow-wrap: anywhere;
+    transition: border-color 0.15s, color 0.15s;
   }
-  .contact-label {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  .contact-list a:hover,
+  .contact-list a:focus-visible {
+    border-color: var(--band-accent);
+  }
+  .contact-list svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex: none;
     color: var(--band-accent);
   }
   .footer-meta {

@@ -1,6 +1,6 @@
 {
   "title": "Carrera",
-  "description": "Data Platform Engineer en Plub: lakehouse en AWS, frameworks de ingesta, Airflow y dbt en producción. Trayectoria, formación y certificaciones.",
+  "description": "Data Platform Engineer en Plub: lakehouse multi-tenant en AWS construido desde cero, con dbt y Airflow. Trayectoria en banca y fintech, formación y certificaciones.",
   "lead": "Me dedico a que los datos lleguen a tiempo, limpios y a quien los necesita.",
   "cv": {
     "label": "Descargar CV (PDF, en inglés)",
@@ -9,14 +9,14 @@
   "plub": {
     "title": "Qué hago en Plub",
     "paragraphs": [
-      "Soy Data Platform Engineer en Plub. Diseño y opero la plataforma de datos de la empresa: un lakehouse en AWS que recibe información de distintos sistemas, la ordena y la deja lista para reportes y análisis.",
-      "El trabajo va desde construir frameworks de ingesta reutilizables, para que sumar una fuente nueva sea configurar y no reescribir, hasta orquestar los pipelines con Airflow, modelar con dbt y cuidar que todo corra en producción sin sorpresas."
+      "Soy Data Platform Engineer en Plub. Diseñé y construí desde cero, como ingeniero principal, el lakehouse multi-tenant de la empresa en AWS: S3, Glue, Athena, Lake Formation y Lambda, con dbt y Airflow para las transformaciones.",
+      "El trabajo va desde frameworks de ingesta reutilizables, para que sumar una fuente nueva sea configurar y no reescribir, hasta modelar con dbt, orquestar con Airflow y cuidar que todo corra en producción sin sorpresas."
     ],
     "highlightsTitle": "Lo que eso significa en la práctica",
     "highlights": [
-      "Pasamos de servidores siempre encendidos a una arquitectura serverless: menos costo fijo y menos mantenimiento.",
-      "Los pipelines tienen pruebas, alertas y reintentos, así que un error se detecta antes de que llegue a un reporte.",
-      "El acceso a los datos es por permisos basados en etiquetas: cada equipo ve lo que le corresponde sin esperar un ticket.",
+      "Migré la plataforma de EC2 y servicios siempre encendidos a una arquitectura serverless: menos costo fijo y menos mantenimiento.",
+      "La tasa de fallas de los pipelines se mantiene por debajo del 1%, con pruebas, alertas y reintentos.",
+      "El acceso a los datos es inmediato y self-serve, con permisos basados en etiquetas (LF-Tags): cada equipo ve lo que le corresponde sin esperar un ticket.",
       "Las transformaciones viven en dbt, versionadas y documentadas, en vez de consultas sueltas."
     ]
   },
@@ -26,7 +26,7 @@
       "period": "jun 2025 – hoy",
       "role": "Data Platform Engineer",
       "org": "Plub",
-      "text": "Lakehouse multi-dominio en AWS, frameworks de ingesta, Airflow, dbt y gobierno de datos."
+      "text": "Lakehouse multi-tenant en AWS construido desde cero (S3, Glue, Athena, Lake Formation, Lambda), dbt, Airflow y gobierno de datos."
     },
     {
       "period": "ago 2024 – jun 2025",
@@ -81,8 +81,8 @@
   "skillsTitle": "Herramientas",
   "skills": [
     { "group": "Lenguajes", "items": ["Python", "SQL", "Node / TypeScript"] },
-    { "group": "Datos", "items": ["Airflow", "dbt", "PostgreSQL", "Neo4j"] },
-    { "group": "Nube e infraestructura", "items": ["AWS", "Docker"] },
+    { "group": "Datos", "items": ["Airflow", "dbt", "PySpark", "PostgreSQL", "Neo4j"] },
+    { "group": "Nube e infraestructura", "items": ["AWS", "Terraform", "Docker"] },
     { "group": "Machine learning", "items": ["PyTorch", "scikit-learn"] }
   ]
 }
