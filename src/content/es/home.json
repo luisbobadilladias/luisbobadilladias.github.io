@@ -19,13 +19,6 @@
       "title": "Consultoría",
       "text": "Pipelines, arquitectura en AWS, costos de nube y reportes que se arman solos.",
       "link": "Ver servicios"
-    },
-    {
-      "route": "teaching",
-      "eyebrow": "Masterclass",
-      "title": "Enseñanza",
-      "text": "Masterclass gratis para analistas que quieren pasar de Excel a Python, con ejemplos de Paraguay.",
-      "link": "Ver la masterclass"
     }
   ],
   "nowTitle": "Ahora",

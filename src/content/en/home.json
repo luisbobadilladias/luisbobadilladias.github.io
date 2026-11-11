@@ -19,13 +19,6 @@
       "title": "Consulting",
       "text": "Pipelines, AWS architecture, cloud costs, and reports that build themselves.",
       "link": "See services"
-    },
-    {
-      "route": "teaching",
-      "eyebrow": "Masterclass",
-      "title": "Teaching",
-      "text": "A free masterclass for analysts who want to move from Excel to Python, with examples from Paraguay.",
-      "link": "See the masterclass"
     }
   ],
   "nowTitle": "Now",

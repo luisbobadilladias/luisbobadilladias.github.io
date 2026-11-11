@@ -1,6 +1,6 @@
 ---
 title: Distribuidora Ñandutí
-summary: Un dataset de práctica de una distribuidora paraguaya ficticia, el que uso en el curso.
+summary: Un dataset de práctica de una distribuidora paraguaya ficticia.
 status: available
 tags: [Dataset, pandas, Excel]
 order: 2

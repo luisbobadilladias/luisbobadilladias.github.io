@@ -1,6 +1,6 @@
 ---
 title: Distribuidora Ñandutí
-summary: A practice dataset for a made-up Paraguayan distributor, the one I use in my course.
+summary: A practice dataset for a made-up Paraguayan distributor.
 status: available
 tags: [Dataset, pandas, Excel]
 order: 2

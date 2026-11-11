@@ -7,12 +7,11 @@ export const routes = {
   home: { es: '/', en: '/en/' },
   career: { es: '/carrera/', en: '/en/career/' },
   consulting: { es: '/consultoria/', en: '/en/consulting/' },
-  teaching: { es: '/ensenanza/', en: '/en/teaching/' },
   projects: { es: '/proyectos/', en: '/en/projects/' },
 } as const;
 
 export type RouteKey = keyof typeof routes;
-export const navKeys: RouteKey[] = ['career', 'consulting', 'teaching', 'projects'];
+export const navKeys: RouteKey[] = ['career', 'consulting', 'projects'];
 
 export const otherLang = (lang: Lang): Lang => (lang === 'es' ? 'en' : 'es');
 

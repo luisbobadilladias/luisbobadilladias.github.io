@@ -105,16 +105,6 @@ const ogLocale = { es: 'es_PY', en: 'en_US' };
       <slot />
     </main>
     <Footer lang={lang} />
-
-    <script>
-      // Re-check date-gated blocks (e.g. masterclass) against the visitor's clock.
-      const now = Date.now();
-      document.querySelectorAll<HTMLElement>('[data-from], [data-until]').forEach((el) => {
-        const from = el.dataset.from ? Date.parse(el.dataset.from) : -Infinity;
-        const until = el.dataset.until ? Date.parse(el.dataset.until) : Infinity;
-        el.hidden = !(now >= from && now < until);
-      });
-    </script>
   </body>
 </html>
 
