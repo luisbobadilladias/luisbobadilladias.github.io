@@ -107,7 +107,7 @@ const ogLocale = { es: 'es_PY', en: 'en_US' };
     <Footer lang={lang} />
 
     <script>
-      // Re-check date-gated blocks (course CTAs) against the visitor's clock.
+      // Re-check date-gated blocks (e.g. masterclass) against the visitor's clock.
       const now = Date.now();
       document.querySelectorAll<HTMLElement>('[data-from], [data-until]').forEach((el) => {
         const from = el.dataset.from ? Date.parse(el.dataset.from) : -Infinity;

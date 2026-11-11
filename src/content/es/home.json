@@ -22,10 +22,10 @@
     },
     {
       "route": "teaching",
-      "eyebrow": "Curso",
+      "eyebrow": "Masterclass",
       "title": "Enseñanza",
-      "text": "Un curso para analistas que quieren pasar de Excel a Python, con ejemplos de Paraguay.",
-      "link": "Ver el curso"
+      "text": "Masterclass gratis para analistas que quieren pasar de Excel a Python, con ejemplos de Paraguay.",
+      "link": "Ver la masterclass"
     }
   ],
   "nowTitle": "Ahora",
