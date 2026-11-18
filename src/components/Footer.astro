@@ -9,6 +9,7 @@ interface Props {
 const { lang } = Astro.props;
 const s = site[lang];
 const f = s.footer;
+const [rightsBefore, rightsAfter = ''] = f.rights.split('{heart}');
 
 // Email shows the address so it can be copied; the rest show the network name.
 const links = [
@@ -54,7 +55,7 @@ const links = [
       }
     </ul>
     <p class="footer-meta">
-      © {new Date().getFullYear()} {s.name}. {f.rights}
+      © {new Date().getFullYear()} {s.name}. {rightsBefore}<span class="heart" role="img" aria-label={lang === 'es' ? 'amor' : 'love'}>♥</span>{rightsAfter}
     </p>
   </div>
 </footer>
@@ -112,5 +113,8 @@ const links = [
     border-top: 1px solid var(--band-border);
     font-size: 0.9rem;
     color: var(--band-muted);
+  }
+  .heart {
+    color: var(--band-accent);
   }
 </style>
